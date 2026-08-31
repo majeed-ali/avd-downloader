@@ -230,7 +230,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'can-you-download-youtube-videos-to-watch-offline': {
     slug: 'can-you-download-youtube-videos-to-watch-offline',
     title: 'Can You Download YouTube Videos to Watch Offline? (Everything Explained)',
-    metaTitle: 'Can You Download YouTube Videos to Watch Offline?',
+    metaTitle: 'Can You Download YouTube Videos for Offline Viewing?',
     metaDescription: 'Discover how to download YouTube videos for offline viewing. Understand YouTube Premium limitations, standalone MP4 file saving, device differences, and legal use cases.',
     h1: 'Can You Download YouTube Videos to Watch Offline?',
     publishedAt: '2026-03-01',

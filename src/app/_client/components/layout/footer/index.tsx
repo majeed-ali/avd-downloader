@@ -42,6 +42,14 @@ const links = [
     link: "/twitch-downloader"
   },
   {
+    label: "Pinterest Downloader",
+    link: "/pinterest-downloader"
+  },
+  {
+    label: "Dailymotion Downloader",
+    link: "/daily-motion-downloader"
+  },
+  {
     label: "Vimeo Downloader",
     link: "/vimeo-downloader"
   },
