@@ -287,6 +287,24 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Try It Callout */}
+            <div className="rounded-2xl border border-cyan-500/20 bg-cyan-50/50 dark:bg-cyan-950/20 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-left">
+                <strong className="text-slate-900 dark:text-slate-100 text-sm block font-semibold mb-0.5">
+                  Have a YouTube link ready?
+                </strong>
+                <p className="text-xs text-slate-600 dark:text-slate-400 font-light">
+                  Paste any supported link into our web tool above to start downloading.
+                </p>
+              </div>
+              <a
+                href="#downloadform"
+                className="inline-flex items-center justify-center rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-2.5 text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow flex-shrink-0"
+              >
+                Try It Now ↑
+              </a>
+            </div>
+
             <div className="pt-3 border-t border-slate-200 dark:border-slate-800/80">
               <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">
                 YouTube Links That May Not Work
