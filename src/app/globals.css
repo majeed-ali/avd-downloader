@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  
+  .theming {
+
+    #dark:checked {
+
+      +label {
+        transform: translate(42px, -50%);
+      }
+
+      ~#light {
+
+        +label {
+          z-index: 20;
+        }
+      }
+    }
+  }
+
+  .word-break-word {
+    word-break: break-word;
+  }
+}
