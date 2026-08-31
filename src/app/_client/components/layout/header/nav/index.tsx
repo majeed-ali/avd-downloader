@@ -92,6 +92,13 @@ export const HeaderNav = ({ onClose }: HeaderNavProps) =>{
             Start Downloading
           </a>
         </li>
+        <li className="mb-4 lg:mb-0">
+          <Link
+            className="text-[11px] uppercase tracking-[0.16em] text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+            href="/blog">
+            Guides
+          </Link>
+        </li>
         <li className="relative z-30">
           <details className="group relative inline-block text-left">
             <summary className="list-none cursor-pointer text-[11px] uppercase tracking-[0.16em] text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700/80 hover:border-cyan-500/50 inline-flex items-center gap-2">

@@ -1,0 +1,38 @@
+# AnyVideoDownloader (anyvideodownloader.app)
+
+> AnyVideoDownloader is a free, web-based online video downloader and audio converter. It allows users to process and download eligible videos from YouTube, Instagram, Facebook, Twitch, Vimeo, Pinterest, and Dailymotion directly within their web browser without installing desktop software or mobile apps.
+
+## Key Information & Capabilities
+
+- **100% Web-Based**: Runs entirely inside modern desktop and mobile browsers (Chrome, Safari, Edge, Firefox). No software installation or browser extensions required.
+- **High Resolutions Supported**: Supports MP4 video downloads up to 1080p Full HD and 4K Ultra HD (2160p) when provided by the source content.
+- **Audio Extraction**: Extracts high-fidelity 320kbps MP3 and uncompressed WAV audio for offline listening and creator workflows.
+- **No Registration**: Free to use with no account sign-up, subscription fees, or watermarks.
+- **Legitimate Use**: Designed for personal offline archiving of user-owned content, public domain material, Creative Commons works, and videos where creators have granted offline permission. Does not bypass platform access controls.
+
+## Core Tool Pages
+
+- [YouTube Video Downloader](https://anyvideodownloader.app/en): Primary online downloader for YouTube videos in HD and MP3.
+- [YouTube Downloader 4K](https://anyvideodownloader.app/en/4k-video-downloader): Dedicated tool for downloading eligible YouTube videos in 4K Ultra HD (2160p).
+- [YouTube to MP3](https://anyvideodownloader.app/en/youtube-to-mp3): Converts YouTube videos to 320kbps MP3 audio files.
+- [YouTube 1080p Downloader](https://anyvideodownloader.app/en/youtube-1080p-downloader): Downloads Full HD 1080p video streams with synchronized audio.
+- [YouTube Playlist Downloader](https://anyvideodownloader.app/en/youtube-playlist-downloader): Batch downloads public YouTube playlists into MP4/MP3.
+- [YouTube to WAV](https://anyvideodownloader.app/en/youtube-to-wav): Converts video audio to lossless uncompressed WAV PCM format for audio editing.
+- [Instagram Downloader](https://anyvideodownloader.app/en/instagram-downloader): Downloads public Instagram Reels, Stories, and video posts without watermarks.
+- [Facebook Downloader](https://anyvideodownloader.app/en/facebook-downloader): Saves public Facebook videos and Watch clips.
+- [Twitch Downloader](https://anyvideodownloader.app/en/twitch-downloader): Saves Twitch clips and highlights in up to 1080p/60fps.
+- [Vimeo Downloader](https://anyvideodownloader.app/en/vimeo-downloader): Downloads high-bitrate Vimeo creator videos in HD/4K.
+- [Pinterest Downloader](https://anyvideodownloader.app/en/pinterest-downloader): Saves Pinterest Video Pins and idea pins.
+- [Dailymotion Downloader](https://anyvideodownloader.app/en/daily-motion-downloader): Downloads Dailymotion videos in HD.
+
+## Knowledge Base & Tutorials
+
+- [Guides & Tutorials Hub](https://anyvideodownloader.app/en/blog): Complete index of how-to guides and troubleshooting articles.
+- [How to Download YouTube Videos on iPhone](https://anyvideodownloader.app/en/blog/how-to-download-youtube-videos-on-iphone): Step-by-step tutorial on using Safari Download Manager and the iOS Files app to save videos to the Photos app (Camera Roll).
+- [Can You Download YouTube Videos to Watch Offline?](https://anyvideodownloader.app/en/blog/can-you-download-youtube-videos-to-watch-offline): Comprehensive explanation of YouTube's official offline caching vs. standalone MP4/MP3 file downloads.
+
+## Technical Specifications
+
+- **Input**: Public video URL from supported platforms.
+- **Output Formats**: MP4 (360p, 720p, 1080p, 1440p, 4K), WEBM (4K, 8K), MP3 (up to 320kbps), M4A, WAV.
+- **Multilingual Support**: 20+ languages supported with localized routes (e.g. `/en`, `/de`, `/es`, `/fr`, `/it`, etc.).

@@ -14,6 +14,7 @@ import Script from "next/script";
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anyvideodownloader.app'),
   title: "Any Video Downloader - Download videos from YouTube and more",
   description: "Download videos from YouTube and other platforms with Any Video Downloader. Fast, easy, and free online video downloader. Save your favorite videos in MP4, MP3, and more formats.",
   icons: {

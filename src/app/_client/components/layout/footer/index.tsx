@@ -28,6 +28,18 @@ const links = [
   {
     label: "Youtube 1080p Downloader",
     link: "/youtube-1080p-downloader"
+  },
+  {
+    label: "Guides & Tutorials",
+    link: "/blog"
+  },
+  {
+    label: "Download YouTube on iPhone",
+    link: "/blog/how-to-download-youtube-videos-on-iphone"
+  },
+  {
+    label: "Watch YouTube Offline",
+    link: "/blog/can-you-download-youtube-videos-to-watch-offline"
   }
 ]
 
