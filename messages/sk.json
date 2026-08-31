@@ -418,68 +418,63 @@
       }
     },
     "ytwav": {
-      "fullname": "YouTube till WAV",
+      "fullname": "YouTube do WAV",
       "hero": {
-        "title": "YouTube till WAV",
-        "description": "Få WAV-filer från YouTube-videor på några sekunder. Det här verktyget säkerställer snabb och högkvalitativ ljudextraktion med lätthet."
+        "title": "YouTube do WAV",
+        "description": "Získajte bezstratové WAV audio súbory z YouTube videí v priebehu niekoľkých sekúnd. Rýchla a vysoko kvalitná extrakcia zvuku bez kompresie."
       },
       "faqs": {
-        "word": "Vanliga frågor",
+        "word": "Často kladené otázky",
         "intro1": [
-          "loader.fo är ett av de mest populära nedladdningsverktygen på internet.",
-          "Med detta verktyg kan du ladda ner och konvertera videor från nästan var som helst på internet, från YouTube, Twitter och Facebook till OK.ru, TikTok och allt däremellan.",
-          "Funktionsmässigt är det väldigt enkelt. Användaren behöver bara ange URL:en på sidan i 'url'-fältet, välja format och klicka på nedladdning."
+          "loader.fo patrí medzi najpopulárnejšie nástroje na sťahovanie a konverziu na internete.",
+          "S týmto nástrojom môžete rýchlo a jednoducho prevádzať YouTube videá do bezstratového audio formátu WAV.",
+          "Stačí vložiť URL adresu videa, zvoliť formát WAV a kliknúť na stiahnuť."
         ],
-        "heading": "Konvertera YouTube till WAV snabbt och gratis med YouTube till WAV Converter",
+        "heading": "Preveďte YouTube do WAV zadarmo a bez straty kvality",
         "intro2": [
-          "YouTube är en enorm online-videosharingplattform där användare kan titta på, ladda upp och dela ett brett utbud av videor. Från underhållning, utbildningsinnehåll och musik till tutorials, erbjuder YouTube ett brett spektrum av användargenererat och professionellt innehåll.",
-          "När det gäller ljud, är WAV det bästa formatet då det bevarar all den ursprungliga ljudkvaliteten utan komprimering. Det ger ljud av högsta kvalitet och är det föredragna valet för proffs och ljudentusiaster.",
-          "Men det finns ett problem med YouTube—inga nedladdningar eller konverteringsalternativ för gratisanvändare. Det är här YouTube till WAV Converter kommer in och gör jobbet.",
-          "Det är din bästa vän för att hämta högkvalitativt ljud från YouTube-videor och omvandla det till WAV utan att förlora kvaliteten. Det är snabbt, enkelt och håller ditt ljud kristallklart.",
-          "Så för alla som vill ha det bästa ljudet från YouTube men stöter på hinder, är den här konverteraren en livräddare. Den ser till att du får högkvalitativt ljud utan krångel från dina favorit-YouTube-innehåll."
+          "Formát WAV je známy ako nekomprimovaný štandard, ktorý zachováva všetky pôvodné detaily zvuku.",
+          "Náš konvertor YouTube do WAV vám umožní získať krištáľovo čistý zvuk pre offline počúvanie alebo ďalšie úpravy bez akýchkoľvek poplatkov."
         ],
         "list": [
           {
-            "question": "Stöder verktyget högupplösta ljudkonverteringar?",
-            "answer": "WAV-formatet är känt som det finaste ljudformatet eftersom det sparar den ursprungliga ljudkvaliteten. Så när du laddar ner någon YouTube-video med musik med det här verktyget sparas den i högupplöst ljudformat."
+            "question": "Podporuje nástroj sťahovanie v nekomprimovanej kvalite WAV?",
+            "answer": "Áno, formát WAV ukladá zvuk v plnej pôvodnej kvalite audio stopy bez stratovej kompresie."
           },
           {
-            "question": "Vad är den genomsnittliga konverteringstiden för en YouTube-video till WAV?",
-            "answer": "Den genomsnittliga konverteringstiden för en YouTube-video till WAV-format beror vanligtvis på din internetanslutning och storleken på filen du tänker ladda ner. Men vanligtvis laddas filerna ner snabbare jämfört med andra verktyg."
+            "question": "Aký je priemerný čas konverzie videa na WAV?",
+            "answer": "Konverzia prebieha takmer okamžite a trvá zvyčajne len niekoľko sekúnd."
           },
           {
-            "question": "Kan jag redigera WAV-filen efter konvertering?",
-            "answer": "Ja, du får redigera den nedladdade filen. Men för det behöver du andra tredjepartsapplikationer som enkelt finns tillgängliga på nätet."
+            "question": "Je služba sťahovania do WAV bezplatná?",
+            "answer": "Áno, konvertor je 100% bezplatný a bez akýchkoľvek obmedzení."
           }
         ],
         "branding": {
-          "title": "loader.fo: Det enklaste YouTube till WAV-konverteraren",
+          "title": "loader.fo: Jednoduchý prevodník YouTube do WAV",
           "intro": [
-            "loader.fo är en plattform som erbjuder en enkel lösning för att omvandla din föredragna YouTube-ljudfil till högkvalitativa WAV-filer. Säg adjö till komplicerade procedurer och hej till en användarvänlig upplevelse utan krångel.",
-            "loader.fo har fem framstående funktioner. Först erbjuder det blixtsnabb konvertering, som snabbt omvandlar din valda YouTube-ljudfil till högkvalitativa WAV-filer. Sedan förenklar den användarvänliga gränssnittet hela processen och gör den tillgänglig för användare på alla nivåer.",
-            "Utan att kompromissa med ljudkvaliteten bevarar detta verktyg rikedom och djup i dina favoritlåtar. Dessutom stöder det problemfria nedladdningar och säkerställer en smidig upplevelse utan onödiga komplikationer. Slutligen är det helt gratis och erbjuder förstklassig konvertering utan kostnad.",
-            "Steg för att använda loader.fo:"
+            "Preveďte svoje obľúbené skladby a videá z YouTube do formátu WAV pohodlne.",
+            "Užívajte si prémiovú kvalitu zvuku bez zbytočného softvéru.",
+            "Kroky na stiahnutie WAV cez loader.fo"
           ],
           "list": [
-            "Kopiera länken till YouTube-musikvideon du vill konvertera till WAV.",
-            "Besök loader.fo, plattformen för YouTube till WAV-nedladdningar.",
-            "Klistra in YouTube-länken på loader.fo.",
-            "Klicka på konverteringsknappen och låt loader.fo göra sitt magiska.",
-            "Ladda ner din WAV-fil när konverteringen är klar och njut av din favoritmusik!"
+            "Skopírujte odkaz na video z YouTube.",
+            "Vložte odkaz do poľa na stránke loader.fo.",
+            "Zvoľte formát WAV a kliknite na tlačidlo prevodu.",
+            "Uložte si výsledný WAV súbor do svojho zariadenia."
           ],
-          "subtitle": "loader.fo: Vanliga frågor",
+          "subtitle": "loader.fo: Otázky a odpovede k WAV",
           "questions": [
             {
-              "question": "Är mina personuppgifter säkra när jag använder den här tjänsten?",
-              "answer": "loader.fo lagrar inte dina personuppgifter eller sparar videorna som du laddar ner med detta verktyg. Därför är dina personuppgifter helt säkra."
+              "question": "Sú moje osobné údaje v bezpečí?",
+              "answer": "Áno, nástroj nevyžaduje registráciu ani neuchováva žiadne osobné údaje."
             },
             {
-              "question": "Finns det några premiumfunktioner som kräver betalning?",
-              "answer": "Det här verktyget är helt gratis att använda. Därför kan alla funktioner som finns tillgängliga med verktyget användas gratis utan att betala en enda krona."
+              "question": "Funguje formát WAV na zariadeniach so systémom Windows a Mac?",
+              "answer": "Áno, formát WAV je univerzálne podporovaný na všetkých zariadeniach."
             },
             {
-              "question": "Finns det någon gräns för gratis konverteringar per dag?",
-              "answer": "En av de framstående funktionerna i detta högklassiga verktyg är att du får konvertera så många YouTube-videor till WAV-format som du vill."
+              "question": "Môžem konvertovať neobmedzený počet videí?",
+              "answer": "Áno, môžete prevádzať ľubovoľné množstvo videí bez denného limitu."
             }
           ]
         }
@@ -616,6 +611,6 @@
           }
         ]
       }
-  }
+    }
   }
 }

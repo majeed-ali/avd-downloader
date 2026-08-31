@@ -42,7 +42,7 @@ export async function generateMetadata({
   const imageUrl = post.coverImage || '/AVD-BLACK-VERSION.webp';
 
   return {
-    title: `${post.metaTitle} | AnyVideoDownloader`,
+    title: post.metaTitle,
     description: post.metaDescription,
     alternates: {
       canonical: canonicalUrl,

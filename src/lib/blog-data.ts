@@ -46,7 +46,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-youtube-videos-on-iphone': {
     slug: 'how-to-download-youtube-videos-on-iphone',
     title: 'How to Download YouTube Videos on iPhone (Step-by-Step Guide)',
-    metaTitle: 'How to Download YouTube Videos on iPhone - Complete Step-by-Step Guide',
+    metaTitle: 'How to Download YouTube Videos on iPhone (iOS Guide)',
     metaDescription: 'Learn how to download YouTube videos on your iPhone using Safari and the iOS Files app. Detailed steps for saving videos to your Camera Roll and troubleshooting.',
     h1: 'How to Download YouTube Videos on iPhone',
     publishedAt: '2026-03-01',
@@ -230,7 +230,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'can-you-download-youtube-videos-to-watch-offline': {
     slug: 'can-you-download-youtube-videos-to-watch-offline',
     title: 'Can You Download YouTube Videos to Watch Offline? (Everything Explained)',
-    metaTitle: 'Can You Download YouTube Videos to Watch Offline? Full Guide & Options',
+    metaTitle: 'Can You Download YouTube Videos to Watch Offline?',
     metaDescription: 'Discover how to download YouTube videos for offline viewing. Understand YouTube Premium limitations, standalone MP4 file saving, device differences, and legal use cases.',
     h1: 'Can You Download YouTube Videos to Watch Offline?',
     publishedAt: '2026-03-01',
@@ -393,7 +393,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-youtube-videos-on-android': {
     slug: 'how-to-download-youtube-videos-on-android',
     title: 'How to Download YouTube Videos on Android (Step-by-Step Guide)',
-    metaTitle: 'How to Download YouTube Videos on Android - Fast & Easy Guide',
+    metaTitle: 'How to Download YouTube Videos on Android (Step-by-Step)',
     metaDescription: 'Learn how to download YouTube videos on Android smartphones and tablets using Chrome and the Files app. Step-by-step tutorial with troubleshooting tips.',
     h1: 'How to Download YouTube Videos on Android',
     publishedAt: '2026-03-01',
@@ -491,7 +491,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-youtube-videos-on-pc': {
     slug: 'how-to-download-youtube-videos-on-pc',
     title: 'How to Download YouTube Videos on PC (Windows 10 & 11 Guide)',
-    metaTitle: 'How to Download YouTube Videos on PC (Windows 10 & 11) - Easy Guide',
+    metaTitle: 'How to Download YouTube Videos on PC (Windows 10 & 11)',
     metaDescription: 'Step-by-step guide to downloading YouTube videos on your PC or Windows laptop without software. Save videos in 1080p, 4K, or MP3 format.',
     h1: 'How to Download YouTube Videos on PC',
     publishedAt: '2026-03-01',
@@ -577,7 +577,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-youtube-videos-on-mac': {
     slug: 'how-to-download-youtube-videos-on-mac',
     title: 'How to Download YouTube Videos on Mac (macOS Guide)',
-    metaTitle: 'How to Download YouTube Videos on Mac (macOS) - Fast & Free Guide',
+    metaTitle: 'How to Download YouTube Videos on Mac (macOS Guide)',
     metaDescription: 'Discover how to download YouTube videos on your Mac using Safari or Chrome. Step-by-step instructions for saving 1080p, 4K, and MP3 files on macOS.',
     h1: 'How to Download YouTube Videos on Mac',
     publishedAt: '2026-03-01',
@@ -663,7 +663,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'where-do-downloaded-videos-go-on-iphone': {
     slug: 'where-do-downloaded-videos-go-on-iphone',
     title: 'Where Do Downloaded Videos Go on iPhone? (Files vs. Photos Explained)',
-    metaTitle: 'Where Do Downloaded Videos Go on iPhone? How to Find & Move Them',
+    metaTitle: 'Where Do Downloaded Videos Go on iPhone? (Find & Move)',
     metaDescription: 'Find out exactly where downloaded video files are stored on iPhone and iPad. Learn how to locate them in the Files app and save them to the Photos Camera Roll.',
     h1: 'Where Do Downloaded Videos Go on iPhone?',
     publishedAt: '2026-03-01',
@@ -751,7 +751,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-instagram-videos': {
     slug: 'how-to-download-instagram-videos',
     title: 'How to Download Instagram Videos, Reels, & Stories Online',
-    metaTitle: 'How to Download Instagram Videos & Reels Online (No Watermark)',
+    metaTitle: 'How to Download Instagram Videos & Reels (No Watermark)',
     metaDescription: 'Step-by-step guide to downloading Instagram reels, video posts, and stories in HD without watermarks. Free online web tool for iPhone, Android, and PC.',
     h1: 'How to Download Instagram Videos & Reels',
     publishedAt: '2026-03-01',
@@ -825,7 +825,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'how-to-download-facebook-videos': {
     slug: 'how-to-download-facebook-videos',
     title: 'How to Download Facebook Videos & Reels Online in HD',
-    metaTitle: 'How to Download Facebook Videos & Reels in HD - Easy Guide',
+    metaTitle: 'How to Download Facebook Videos & Reels in HD',
     metaDescription: 'Learn how to download Facebook videos, Watch clips, and reels in high definition MP4 format. Free online web downloader for mobile and desktop.',
     h1: 'How to Download Facebook Videos & Reels',
     publishedAt: '2026-03-01',
@@ -894,7 +894,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'mp4-vs-webm': {
     slug: 'mp4-vs-webm',
     title: 'MP4 vs. WEBM: Which Video Format Should You Choose?',
-    metaTitle: 'MP4 vs WEBM: Quality, Compatibility & File Size Comparison',
+    metaTitle: 'MP4 vs WEBM: Quality, Compatibility & File Size Guide',
     metaDescription: 'Detailed comparison of MP4 and WEBM video formats. Learn which format is best for compatibility, video quality, compression, and 4K streaming.',
     h1: 'MP4 vs. WEBM: Complete Format Comparison',
     publishedAt: '2026-03-01',
@@ -1049,7 +1049,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   'video-download-not-working': {
     slug: 'video-download-not-working',
     title: 'Why Is Video Download Not Working? (Troubleshooting & Quick Fixes)',
-    metaTitle: 'Video Download Not Working? Quick Fixes & Troubleshooting Guide',
+    metaTitle: 'Video Download Not Working? Quick Troubleshooting Guide',
     metaDescription: 'Troubleshoot common online video downloader problems. Fix slow downloads, pop-up blocks, missing 1080p/4K options, and browser restrictions.',
     h1: 'Why Is Video Download Not Working? Common Fixes',
     publishedAt: '2026-03-01',

@@ -30,16 +30,24 @@ const links = [
     link: "/youtube-1080p-downloader"
   },
   {
+    label: "Instagram Downloader",
+    link: "/instagram-downloader"
+  },
+  {
+    label: "Facebook Downloader",
+    link: "/facebook-downloader"
+  },
+  {
+    label: "Twitch Downloader",
+    link: "/twitch-downloader"
+  },
+  {
+    label: "Vimeo Downloader",
+    link: "/vimeo-downloader"
+  },
+  {
     label: "Guides & Tutorials",
     link: "/blog"
-  },
-  {
-    label: "Download YouTube on iPhone",
-    link: "/blog/how-to-download-youtube-videos-on-iphone"
-  },
-  {
-    label: "Watch YouTube Offline",
-    link: "/blog/can-you-download-youtube-videos-to-watch-offline"
   }
 ]
 
@@ -103,7 +111,12 @@ export const Footer = () =>{
       <div className="lg:basis-full p-4">
         <div className="border-t-2 pt-16 border-t-gray-200 dark:border-t-gray-800">
           <p className="font-light text-sm text-base_one dark:text-dark_base_one">Copyright © 2026 All Rights Reseved.</p>
-          <p className="font-light text-sm text-base_one dark:text-dark_base_one text-right decoration-wavy"><a href="mailto:support@anyvideodownloader.app" className="underline">Contact</a>.</p>
+          <p
+            className="font-light text-sm text-base_one dark:text-dark_base_one text-right decoration-wavy"
+            dangerouslySetInnerHTML={{
+              __html: '<!--email_off--><a href="mailto:support@anyvideodownloader.app" class="underline">Contact</a><!--/email_off-->.'
+            }}
+          />
         </div>
       </div>
     </footer>

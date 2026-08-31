@@ -12,6 +12,19 @@ const nextConfig = {
 	distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
 	turbopack: {
 		root: projectRoot
+	},
+	async headers() {
+		return [
+			{
+				source: '/:path*',
+				headers: [
+					{
+						key: 'X-Content-Type-Options',
+						value: 'nosniff'
+					}
+				]
+			}
+		];
 	}
 };
  

@@ -195,7 +195,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "instagram-downloader": {
     title: "Instagram Video Downloader",
-    metaTitle: "Instagram Video Downloader - Download Reels, Posts & Stories",
+    metaTitle: "Instagram Video Downloader: Save Reels & Posts in HD",
     metaDescription: "Download Instagram Reels, videos, and IGTV clips online in HD MP4 format. Free, unlimited, and no Instagram login required.",
     vdaKey: "yvd",
     h1: "Instagram Video Downloader",
@@ -223,7 +223,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "facebook-downloader": {
     title: "Facebook Video Downloader",
-    metaTitle: "Facebook Video Downloader - Save FB Watch & Clips in HD",
+    metaTitle: "Facebook Video Downloader: Save FB Videos in HD",
     metaDescription: "Download Facebook videos, Watch clips, and public reels online for free in MP4 format. Fast, unlimited, and no software required.",
     vdaKey: "yvd",
     h1: "Facebook Video Downloader",
@@ -251,7 +251,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "twitch-downloader": {
     title: "Twitch Downloader",
-    metaTitle: "Twitch Downloader - Download Twitch Clips & VODs Online",
+    metaTitle: "Twitch Downloader: Save Clips & Stream VODs in 1080p",
     metaDescription: "Save Twitch clips, highlights, and stream VODs in high quality with our free online Twitch downloader. Fast, simple, and web-based.",
     vdaKey: "yvd",
     h1: "Twitch Downloader",
@@ -279,7 +279,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "pinterest-downloader": {
     title: "Pinterest Video Downloader",
-    metaTitle: "Pinterest Video Downloader - Download Pinterest Pins Free",
+    metaTitle: "Pinterest Video Downloader: Save Video Pins Free",
     metaDescription: "Download Pinterest videos, Idea Pins, and GIF animations online for free. Fast and simple Pinterest downloader with no registration.",
     vdaKey: "yvd",
     h1: "Pinterest Video Downloader",
@@ -307,7 +307,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "daily-motion-downloader": {
     title: "Dailymotion Video Downloader",
-    metaTitle: "Dailymotion Video Downloader - Download Dailymotion in HD",
+    metaTitle: "Dailymotion Video Downloader: Save Videos in HD",
     metaDescription: "Download Dailymotion videos online for free in 720p, 1080p, and MP3. Fast, simple, and web-based with AnyVideoDownloader.",
     vdaKey: "yvd",
     h1: "Dailymotion Video Downloader",
@@ -331,7 +331,7 @@ const toolConfigs: Record<string, ToolConfig> = {
   },
   "vimeo-downloader": {
     title: "Vimeo Video Downloader",
-    metaTitle: "Vimeo Video Downloader - Download High-Res Vimeo Videos Free",
+    metaTitle: "Vimeo Video Downloader: Save HD & 4K Videos Online",
     metaDescription: "Save public Vimeo videos in 1080p, 4K, and MP4 format online for free. High-speed, browser-based Vimeo downloader.",
     vdaKey: "yvd",
     h1: "Vimeo Video Downloader",
@@ -392,7 +392,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = toolMsg?.hero?.title
     ? `${toolMsg.hero.title} – AnyVideoDownloader`
-    : `${config.metaTitle} | AnyVideoDownloader`;
+    : config.metaTitle;
 
   const description = toolMsg?.hero?.description || config.metaDescription;
   const canonicalPath = `/${vda}`;
