@@ -20,25 +20,8 @@ export const FaqAccordion = ({
   ctaTargetHref = "#downloadform",
   ctaText = "Start Downloading Now"
 }: FaqAccordionProps) => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": items.map((item) => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
-
   return (
     <section className="my-16 rounded-3xl py-10 lg:py-16 px-5 lg:px-12 border border-slate-200 dark:border-slate-800 bg-[linear-gradient(180deg,#fbfdff_0%,#edf4ff_60%,#e6eef9_100%)] dark:bg-[linear-gradient(180deg,#0d1322_0%,#090d17_60%,#060a12_100%)] shadow-[0_16px_35px_rgba(0,0,0,0.08)] dark:shadow-[0_30px_65px_rgba(0,0,0,0.45)]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h2 className="font-bold text-2xl lg:text-4xl text-slate-900 dark:text-slate-100 mb-3">
           {title}

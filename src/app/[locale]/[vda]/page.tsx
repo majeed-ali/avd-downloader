@@ -5,8 +5,14 @@ import { Hero } from "@/app/_client/components/shared/hero";
 import { Partners } from "@/app/_client/components/shared/partners";
 import { FaqAccordion, FAQItem } from "@/app/_client/components/shared/faq-accordion";
 import { Breadcrumbs } from "@/app/_client/components/shared/breadcrumbs";
-import { RelatedGuides } from "@/app/_client/components/shared/related-guides";
-import { getAllBlogPosts } from "@/lib/blog-data";
+import {
+  getCanonicalUrl,
+  getHreflangAlternates,
+  getRobotsMetadata,
+  isRouteIndexable,
+  getLocaleMessages,
+  RouteCategory
+} from "@/lib/seo";
 
 export const runtime = "edge";
 
@@ -28,6 +34,14 @@ type ToolConfig = {
   introParagraphs: string[];
   faqs: FAQItem[];
   clusterCategory: 'youtube' | 'instagram' | 'facebook' | 'vimeo' | 'audio';
+};
+
+const CORE_TOOL_SLUG_MAP: Record<string, string> = {
+  "4k-video-downloader": "4kd",
+  "youtube-to-mp3": "ytmp3",
+  "youtube-playlist-downloader": "ypd",
+  "youtube-to-wav": "ytwav",
+  "youtube-1080p-downloader": "y1080d"
 };
 
 const toolConfigs: Record<string, ToolConfig> = {
@@ -109,92 +123,92 @@ const toolConfigs: Record<string, ToolConfig> = {
     ],
     faqs: [
       {
-        question: "How do I download an entire YouTube playlist?",
-        answer: "Copy the URL of the YouTube playlist (make sure the URL contains 'list='), paste it into our downloader, choose your preferred format, and process the items."
+        question: "Can I download an entire playlist at once?",
+        answer: "Yes, paste the playlist link into the downloader to view and save the included video tracks in high quality."
       },
       {
-        question: "Can I choose between MP4 video and MP3 audio for playlists?",
-        answer: "Yes, you can download playlist items as MP4 video files or convert them directly into MP3 audio tracks."
+        question: "Can I convert YouTube playlists directly to MP3 files?",
+        answer: "Yes, you can choose the MP3 audio format to download music playlists or podcast albums as individual audio tracks."
       },
       {
-        question: "Is there a maximum number of videos allowed per playlist?",
-        answer: "Our tool processes standard playlists smoothly. For very large playlists (100+ videos), we recommend processing in manageable batches for optimal download speeds."
+        question: "Is there a limit to how many videos a playlist can contain?",
+        answer: "AnyVideoDownloader processes large public playlists efficiently with no restrictions on track counts."
       }
     ],
     clusterCategory: "youtube"
   },
   "youtube-to-wav": {
     title: "YouTube to WAV Converter",
-    metaTitle: "YouTube to WAV Downloader - Lossless Studio Audio Converter",
-    metaDescription: "Convert YouTube videos to uncompressed WAV audio online with clean fidelity. Free YouTube to WAV downloader for music production and editing.",
+    metaTitle: "YouTube to WAV Converter - Lossless Audio Downloader Online",
+    metaDescription: "Extract uncompressed, high-fidelity WAV audio from YouTube videos online for free. Studio quality with no registration needed.",
     vdaKey: "ytwav",
     h1: "YouTube to WAV Converter",
     breadcrumbName: "YouTube to WAV",
-    introTitle: "Uncompressed PCM Audio for Producers and Sound Editors",
+    introTitle: "High-Fidelity Uncompressed WAV Audio Extraction",
     introParagraphs: [
-      "WAV (Waveform Audio File Format) is an uncompressed, lossless audio container widely used in professional audio editing, DAWs (such as FL Studio, Ableton Live, Logic Pro), and video post-production.",
-      "Unlike lossy formats like MP3, WAV retains full uncompressed PCM audio waveforms, avoiding generation loss during repeated imports, edits, and re-exports in creative workflows."
+      "WAV (Waveform Audio File Format) is the gold standard for audio editing, music production, and professional broadcasting. Unlike lossy MP3 compression, WAV files retain full waveform fidelity with no compression artifacts.",
+      "Use our YouTube to WAV converter to pull pristine audio streams directly into your digital audio workstation (DAW) for remixing, sampling, or critical listening."
     ],
     faqs: [
       {
         question: "What is the difference between MP3 and WAV?",
-        answer: "MP3 is a compressed lossy format designed for smaller file sizes, while WAV contains uncompressed PCM audio data ideal for sound design, music production, and high-fidelity editing."
+        answer: "MP3 is a compressed format designed to save space, while WAV is an uncompressed lossless format that retains maximum original sound detail, making it ideal for music editing and DAWs."
       },
       {
-        question: "Can I import downloaded WAV files into FL Studio or Ableton?",
-        answer: "Yes! The outputted WAV files conform to standard PCM audio specifications and can be dragged directly into any Digital Audio Workstation (DAW) or video editor."
+        question: "Can I open downloaded WAV files in Audacity or Premiere?",
+        answer: "Yes, WAV files are universally supported across Audacity, Adobe Premiere Pro, Ableton Live, FL Studio, Logic Pro, and all major media players."
       },
       {
-        question: "Why are WAV files larger than MP3 files?",
-        answer: "Because WAV does not apply perceptual compression, it stores the full raw waveform samples, resulting in file sizes roughly 5 to 10 times larger than MP3."
+        question: "Is the WAV converter free?",
+        answer: "Yes, our tool provides free, unlimited conversions with no watermarks."
       }
     ],
     clusterCategory: "audio"
   },
   "youtube-1080p-downloader": {
     title: "YouTube 1080p Downloader",
-    metaTitle: "YouTube 1080p Downloader - Full HD Video Downloads Free",
-    metaDescription: "Download YouTube videos in 1080p Full HD quality with synchronized audio. Fast, reliable, and free YouTube 1080p downloader with no watermark.",
+    metaTitle: "YouTube 1080p Downloader - Download Full HD 1080p Videos",
+    metaDescription: "Download YouTube videos in 1080p Full HD online with crisp audio. Free, fast, and works directly in your web browser.",
     vdaKey: "y1080d",
     h1: "YouTube 1080p Downloader",
     breadcrumbName: "1080p Downloader",
-    introTitle: "Crisp 1080p Full HD Video Downloads with Muxed Audio",
+    introTitle: "Crisp Full HD Video Downloads with Synchronized Audio",
     introParagraphs: [
-      "1080p (1920x1080) Full High Definition is the universal standard for crisp, balanced video playback. It offers the ideal balance between stunning visual sharpness and manageable file sizes.",
-      "Our downloader ensures that 1080p video streams are correctly combined with high-quality audio tracks so you get clean, synchronized MP4 files ready for offline viewing on laptops, phones, and TVs."
+      "1080p Full HD (1920x1080 pixels) provides the ideal balance between pin-sharp visual clarity, manageable file sizes, and fast download speeds. It looks stunning on modern laptops, smart TVs, and smartphones.",
+      "Our 1080p downloader retrieves the full-resolution 1080p stream and combines it seamlessly with the high-bitrate audio track for instant playback."
     ],
     faqs: [
       {
         question: "Does the 1080p download include audio?",
-        answer: "Yes! Our system automatically combines the 1080p video stream with the best available audio stream into a single complete MP4 file."
+        answer: "Yes. Our tool automatically multiplexes the high-definition 1080p video stream with the synchronized audio track into a single playable MP4 file."
       },
       {
-        question: "What frame rate (FPS) is supported for 1080p?",
-        answer: "If the source video was uploaded in 1080p60 (60 frames per second), our tool will preserve the smooth high frame rate."
+        question: "Can I download 1080p videos at 60 frames per second (1080p60)?",
+        answer: "Yes, if the creator uploaded the source video at 60fps (common in gaming and sports videos), our downloader preserves the smooth 60fps frame rate."
       },
       {
-        question: "Is 1080p compatible with iPhones and Android devices?",
-        answer: "Yes, 1080p MP4 is natively supported by virtually all modern smartphones, tablets, and media players."
+        question: "How fast is the 1080p download process?",
+        answer: "Streams are processed within seconds on our high-speed servers, delivering immediate download links to your browser."
       }
     ],
     clusterCategory: "youtube"
   },
   "instagram-downloader": {
-    title: "Instagram Downloader",
-    metaTitle: "Instagram Video Downloader - Save Reels, Stories & Posts",
-    metaDescription: "Download Instagram reels, stories, IGTV, and video posts online for free. Fast Instagram downloader with no watermarks and no login required.",
+    title: "Instagram Video Downloader",
+    metaTitle: "Instagram Video Downloader - Download Reels, Posts & Stories",
+    metaDescription: "Download Instagram Reels, videos, and IGTV clips online in HD MP4 format. Free, unlimited, and no Instagram login required.",
     vdaKey: "yvd",
-    h1: "Instagram Downloader",
+    h1: "Instagram Video Downloader",
     breadcrumbName: "Instagram Downloader",
-    introTitle: "Save Instagram Reels, Stories, and Video Posts in HD",
+    introTitle: "Save Instagram Reels, Videos, and Clips in Seconds",
     introParagraphs: [
-      "Instagram is home to incredible short-form creative Reels, tutorials, recipes, and memorable stories. Saving these videos allows you to archive your own content or keep inspirational clips handy.",
-      "Our web-based Instagram downloader lets you download public Instagram videos directly in high definition without requiring your Instagram password or app installation."
+      "Instagram is the premier social platform for short-form entertainment, creator reels, tutorials, and memorable lifestyle videos. Saving these clips allows you to enjoy them offline or repurpose your own content across platforms.",
+      "With AnyVideoDownloader, simply copy the share link from any public Instagram post and paste it here to download the high-definition MP4 video directly to your camera roll or computer."
     ],
     faqs: [
       {
-        question: "Can I download Instagram Reels without watermarks?",
-        answer: "Yes! The downloaded MP4 video contains the original clean video stream without added watermarks."
+        question: "How do I download an Instagram Reel on my phone?",
+        answer: "Open the Instagram app, tap the 'Share' icon on the reel, select 'Copy link', paste it into our downloader in Safari or Chrome, and tap Download."
       },
       {
         question: "Do I need to log into my Instagram account?",
@@ -278,63 +292,63 @@ const toolConfigs: Record<string, ToolConfig> = {
     faqs: [
       {
         question: "How do I copy a video pin link from the Pinterest app?",
-        answer: "Tap the three dots or Share icon on the pin and select 'Copy link', then paste it into our downloader."
+        answer: "Tap the 'Share' or 'Send' button on any video pin and select 'Copy link'."
       },
       {
-        question: "What format are Pinterest videos downloaded in?",
-        answer: "Pinterest videos are converted and downloaded in universally compatible MP4 video format."
+        question: "Can I save Idea Pins and GIF pins?",
+        answer: "Yes! Our downloader supports standard video pins, multi-page Idea Pins, and animated GIF links."
       },
       {
-        question: "Does this work on mobile and desktop browsers?",
-        answer: "Yes, our tool is 100% web-based and functions across iOS Safari, Android Chrome, Windows, and Mac."
+        question: "Are there watermarks added to downloaded Pinterest videos?",
+        answer: "No, downloads are clean and untouched with zero watermarks."
       }
     ],
     clusterCategory: "youtube"
   },
   "daily-motion-downloader": {
-    title: "Dailymotion Downloader",
-    metaTitle: "Dailymotion Downloader - Save Dailymotion Videos in HD",
-    metaDescription: "Download Dailymotion videos in 1080p, 720p, and MP3 quality for free online. Fast and easy Dailymotion video saving with no registration.",
+    title: "Dailymotion Video Downloader",
+    metaTitle: "Dailymotion Video Downloader - Download Dailymotion in HD",
+    metaDescription: "Download Dailymotion videos online for free in 720p, 1080p, and MP3. Fast, simple, and web-based with AnyVideoDownloader.",
     vdaKey: "yvd",
-    h1: "Dailymotion Downloader",
+    h1: "Dailymotion Video Downloader",
     breadcrumbName: "Dailymotion Downloader",
-    introTitle: "Download Dailymotion Videos and News Clips in HD",
+    introTitle: "Download Dailymotion News, Shows, and Music Videos",
     introParagraphs: [
-      "Dailymotion features international news broadcasts, music videos, short films, and user content. Saving these streams allows for uninterrupted offline viewing anytime.",
-      "Our web-based downloader processes Dailymotion links quickly, allowing you to choose between 1080p, 720p, or MP3 audio downloads."
+      "Dailymotion is home to rich international news broadcasts, documentaries, sports recaps, and independent film projects. Saving these videos enables smooth offline playback on any device.",
+      "Paste the Dailymotion video link to extract high-quality MP4 video or MP3 audio streams in seconds."
     ],
     faqs: [
       {
-        question: "Is Dailymotion video downloading free?",
-        answer: "Yes, AnyVideoDownloader is completely free with no subscription or hidden charges."
+        question: "What qualities are available for Dailymotion downloads?",
+        answer: "We support all qualities made available by the creator on Dailymotion, from 480p SD up to 1080p Full HD."
       },
       {
-        question: "Can I download 1080p HD Dailymotion videos?",
-        answer: "Yes, if the video was uploaded in 1080p HD, our tool provides full resolution MP4 downloads."
+        question: "Can I download Dailymotion videos on mobile?",
+        answer: "Yes! Works seamlessly in mobile Safari (iOS) and Chrome (Android)."
       }
     ],
     clusterCategory: "youtube"
   },
   "vimeo-downloader": {
-    title: "Vimeo Downloader",
-    metaTitle: "Vimeo Downloader - Download High Quality Vimeo Videos Free",
-    metaDescription: "Download Vimeo videos online in 1080p and 4K quality for free. Fast, high-bitrate Vimeo downloader for creators and filmmakers.",
+    title: "Vimeo Video Downloader",
+    metaTitle: "Vimeo Video Downloader - Download High-Res Vimeo Videos Free",
+    metaDescription: "Save public Vimeo videos in 1080p, 4K, and MP4 format online for free. High-speed, browser-based Vimeo downloader.",
     vdaKey: "yvd",
-    h1: "Vimeo Downloader",
+    h1: "Vimeo Video Downloader",
     breadcrumbName: "Vimeo Downloader",
-    introTitle: "Save High-Bitrate Vimeo Films and Creator Videos",
+    introTitle: "Download High-Bitrate Vimeo Videos and Showreels",
     introParagraphs: [
-      "Vimeo is renowned for hosting high-bitrate cinematic films, creative animations, music videos, and indie documentaries. Videographers and viewers appreciate Vimeo’s superior compression and color depth.",
-      "Our Vimeo downloader makes it easy to download public Vimeo videos in full original fidelity for offline portfolio review and reference."
+      "Vimeo is renowned for its high-bitrate video hosting, favored by filmmakers, animators, and commercial creators. Enjoying these artistic masterpieces offline preserves full color grading and detail.",
+      "Paste any public Vimeo video link into our downloader to retrieve high-resolution MP4 video files."
     ],
     faqs: [
       {
-        question: "Can I download high-bitrate 1080p and 4K Vimeo videos?",
-        answer: "Yes! Our downloader supports high-definition and 4K Vimeo video links, saving them in original MP4 quality."
+        question: "Does this downloader preserve Vimeo's high bitrate quality?",
+        answer: "Yes, our tool fetches the direct source MP4 stream to preserve original color, sound, and visual fidelity."
       },
       {
-        question: "Can I convert Vimeo videos to MP3 audio?",
-        answer: "Yes, select 'MP3 Audio' in the format selector before downloading to extract the soundtrack or speech."
+        question: "Can I download password-protected Vimeo videos?",
+        answer: "Our tool processes publicly accessible Vimeo videos. Password-protected or domain-restricted videos cannot be processed for privacy reasons."
       }
     ],
     clusterCategory: "vimeo"
@@ -342,11 +356,11 @@ const toolConfigs: Record<string, ToolConfig> = {
 };
 
 const fallbackConfig: ToolConfig = {
-  title: "Video Downloader",
-  metaTitle: "Video Downloader - Fast Online Video & Audio Converter",
-  metaDescription: "Download videos from major platforms online for free. Fast, easy, and reliable downloader by AnyVideoDownloader.",
+  title: "Online Video Downloader",
+  metaTitle: "Online Video Downloader - Download Videos Free",
+  metaDescription: "Download videos online from popular platforms in MP4 and MP3 format for free with AnyVideoDownloader.",
   vdaKey: "yvd",
-  h1: "Video Downloader",
+  h1: "Online Video Downloader",
   breadcrumbName: "Downloader",
   introTitle: "Fast Online Video Downloader",
   introParagraphs: [
@@ -368,32 +382,48 @@ const fallbackConfig: ToolConfig = {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, vda } = await params;
   const config = toolConfigs[vda] ?? fallbackConfig;
-  const canonicalPath = `/${locale}/${vda}`;
+  const isCoreTool = Boolean(CORE_TOOL_SLUG_MAP[vda]);
+  const category: RouteCategory = isCoreTool ? 'core-tool' : 'non-core-tool';
+  const isIndexable = isRouteIndexable(locale, category);
+
+  const messages = await getLocaleMessages(locale);
+  const toolMsgKey = CORE_TOOL_SLUG_MAP[vda];
+  const toolMsg = toolMsgKey ? messages.homepage?.[toolMsgKey] : null;
+
+  const title = toolMsg?.hero?.title
+    ? `${toolMsg.hero.title} – AnyVideoDownloader`
+    : `${config.metaTitle} | AnyVideoDownloader`;
+
+  const description = toolMsg?.hero?.description || config.metaDescription;
+  const canonicalPath = `/${vda}`;
+  const canonicalUrl = getCanonicalUrl(locale, canonicalPath);
 
   return {
-    title: `${config.metaTitle} | AnyVideoDownloader`,
-    description: config.metaDescription,
+    title,
+    description,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalUrl,
+      languages: getHreflangAlternates(category, canonicalPath)
     },
+    robots: getRobotsMetadata(isIndexable),
     openGraph: {
-      title: `${config.metaTitle} | AnyVideoDownloader`,
-      description: config.metaDescription,
+      title,
+      description,
       type: "website",
-      url: canonicalPath,
+      url: canonicalUrl,
       images: [
         {
           url: "/AVD-BLACK-VERSION.webp",
           width: 1200,
           height: 630,
-          alt: "AnyVideoDownloader"
+          alt: title
         }
       ]
     },
     twitter: {
       card: "summary_large_image",
-      title: `${config.metaTitle} | AnyVideoDownloader`,
-      description: config.metaDescription,
+      title,
+      description,
       images: ["/AVD-BLACK-VERSION.webp"]
     }
   };
@@ -402,39 +432,50 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 const Page = async ({ params }: PageProps) => {
   const { locale, vda } = await params;
   const config = toolConfigs[vda] ?? fallbackConfig;
-  const pageUrl = `https://anyvideodownloader.app/${locale}/${vda}`;
-  const allPosts = getAllBlogPosts();
+  const isCoreTool = Boolean(CORE_TOOL_SLUG_MAP[vda]);
+  const pageUrl = getCanonicalUrl(locale, `/${vda}`);
+
+  const messages = await getLocaleMessages(locale);
+  const toolMsgKey = CORE_TOOL_SLUG_MAP[vda];
+  const toolMsg = toolMsgKey ? messages.homepage?.[toolMsgKey] : null;
+
+  const localizedTitle = toolMsg?.hero?.title || config.title;
+  const localizedDescription = toolMsg?.hero?.description || config.metaDescription;
+
+  // Localized FAQs
+  const rawListFaqs: FAQItem[] = toolMsg?.faqs?.list || [];
+  const rawBrandingFaqs: FAQItem[] = toolMsg?.faqs?.branding?.questions || [];
+  const combinedFaqs: FAQItem[] = [...rawListFaqs, ...rawBrandingFaqs];
+  const faqs = combinedFaqs.length > 0 ? combinedFaqs : config.faqs;
+
+  const introHeading = toolMsg?.faqs?.heading || config.introTitle;
+  const introParagraphs: string[] =
+    toolMsg?.faqs?.intro2 && toolMsg.faqs.intro2.length > 0
+      ? toolMsg.faqs.intro2
+      : toolMsg?.faqs?.intro1 && toolMsg.faqs.intro1.length > 0
+      ? toolMsg.faqs.intro1
+      : config.introParagraphs;
+
+  const brandingTitle = toolMsg?.faqs?.branding?.title;
+  const brandingIntro: string[] = toolMsg?.faqs?.branding?.intro || [];
+  const brandingSteps: string[] = toolMsg?.faqs?.branding?.list || [];
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: config.breadcrumbName, url: `/${vda}` }
+    { name: localizedTitle, url: `/${vda}` }
   ];
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        name: config.metaTitle,
-        url: pageUrl,
-        description: config.metaDescription,
-        primaryImageOfPage: {
-          '@type': 'ImageObject',
-          url: 'https://anyvideodownloader.app/AVD-BLACK-VERSION.webp'
-        }
-      },
-      {
-        '@type': 'SoftwareApplication',
-        name: config.title,
-        applicationCategory: 'MultimediaApplication',
-        operatingSystem: 'Web-based (Browser)',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
-    ]
+    '@type': 'WebPage',
+    name: localizedTitle,
+    url: pageUrl,
+    description: localizedDescription,
+    inLanguage: locale,
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: 'https://anyvideodownloader.app/AVD-BLACK-VERSION.webp'
+    }
   };
 
   return (
@@ -443,8 +484,8 @@ const Page = async ({ params }: PageProps) => {
       itemScope
       itemType="https://schema.org/WebPage"
     >
-      <meta itemProp="name" content={config.metaTitle} />
-      <meta itemProp="description" content={config.metaDescription} />
+      <meta itemProp="name" content={localizedTitle} />
+      <meta itemProp="description" content={localizedDescription} />
       <meta itemProp="image" content="/AVD-BLACK-VERSION.webp" />
       <script
         type="application/ld+json"
@@ -456,35 +497,57 @@ const Page = async ({ params }: PageProps) => {
         <Download />
         <Partners />
 
-        {/* Informational Explanatory Section */}
-        <section className="my-16 rounded-3xl p-6 lg:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-[#090d18]/80 shadow-sm">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-slate-100 mb-4 text-center">
-              {config.introTitle}
-            </h2>
-            <div className="text-slate-600 dark:text-slate-300 text-sm lg:text-base leading-relaxed space-y-4 font-light">
-              {config.introParagraphs.map((p, idx) => (
-                <p key={`intro-${idx}`}>{p}</p>
-              ))}
+        {/* Localized Informational Explanatory Section */}
+        {introParagraphs.length > 0 && (
+          <section className="my-16 rounded-3xl p-6 lg:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-[#090d18]/80 shadow-sm">
+            <div className="max-w-4xl mx-auto space-y-4">
+              <h2 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-slate-100 mb-4 text-center">
+                {introHeading}
+              </h2>
+              <div className="text-slate-600 dark:text-slate-300 text-sm lg:text-base leading-relaxed space-y-4 font-light">
+                {introParagraphs.map((p, idx) => (
+                  <p key={`vda-intro-${idx}`}>{p}</p>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Tailored FAQs with Schema */}
+        {/* Localized Branding / Steps Section */}
+        {brandingTitle && brandingSteps.length > 0 && (
+          <section className="my-16 rounded-3xl p-6 lg:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-[#090d18]/80 shadow-sm">
+            <div className="max-w-4xl mx-auto space-y-6">
+              <h2 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-slate-100 text-center">
+                {brandingTitle}
+              </h2>
+              {brandingIntro.length > 0 && (
+                <div className="text-slate-600 dark:text-slate-300 text-sm lg:text-base leading-relaxed space-y-3 font-light">
+                  {brandingIntro.map((p, idx) => (
+                    <p key={`vda-branding-intro-${idx}`}>{p}</p>
+                  ))}
+                </div>
+              )}
+              <ol className="space-y-3 pt-2">
+                {brandingSteps.map((step, idx) => (
+                  <li key={`vda-step-${idx}`} className="flex items-start gap-3.5 text-sm lg:text-base text-slate-700 dark:text-slate-300">
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-bold text-xs">
+                      {idx + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        )}
+
+        {/* Localized FAQs */}
         <FaqAccordion
-          title={`${config.title} FAQs`}
-          subtitle={`Frequently asked questions about using our online ${config.title.toLowerCase()}.`}
-          items={config.faqs}
+          title={`${localizedTitle} ${toolMsg?.faqs?.word || 'FAQs'}`}
+          subtitle={localizedDescription}
+          items={faqs}
           ctaTargetHref="#downloadform"
-          ctaText={`Start ${config.title}`}
-        />
-
-        {/* Topic Cluster: Related Guides */}
-        <RelatedGuides
-          title="Related Guides & Tools"
-          subtitle="Learn more about downloading videos and exploring companion tools."
-          articles={allPosts}
-          showTools={true}
+          ctaText={`Start ${localizedTitle}`}
         />
 
         <Features vda={config.vdaKey} />

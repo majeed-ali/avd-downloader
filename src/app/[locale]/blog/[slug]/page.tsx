@@ -8,6 +8,12 @@ import { FaqAccordion } from '@/app/_client/components/shared/faq-accordion';
 import { RelatedGuides } from '@/app/_client/components/shared/related-guides';
 import { Download } from '@/app/_client/components/shared/download';
 import { Link } from '@/i18n/routing';
+import {
+  getCanonicalUrl,
+  getHreflangAlternates,
+  getRobotsMetadata,
+  isRouteIndexable
+} from '@/lib/seo';
 
 export const runtime = 'edge';
 
@@ -31,15 +37,18 @@ export async function generateMetadata({
     };
   }
 
-  const canonicalUrl = `/${locale}/blog/${slug}`;
+  const isIndexable = isRouteIndexable(locale, 'blog');
+  const canonicalUrl = getCanonicalUrl(locale, `/blog/${slug}`);
   const imageUrl = post.coverImage || '/AVD-BLACK-VERSION.webp';
 
   return {
     title: `${post.metaTitle} | AnyVideoDownloader`,
     description: post.metaDescription,
     alternates: {
-      canonical: canonicalUrl
+      canonical: canonicalUrl,
+      languages: getHreflangAlternates('blog', `/blog/${slug}`)
     },
+    robots: getRobotsMetadata(isIndexable),
     openGraph: {
       title: `${post.metaTitle} | AnyVideoDownloader`,
       description: post.metaDescription,
@@ -67,7 +76,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const post = getBlogPost(slug);
 
   if (!post) {
@@ -85,6 +94,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     { name: post.h1, url: `/blog/${post.slug}` }
   ];
 
+  const canonicalUrl = getCanonicalUrl(locale, `/blog/${slug}`);
   const imageUrl = post.coverImage
     ? `https://anyvideodownloader.app${post.coverImage}`
     : 'https://anyvideodownloader.app/AVD-BLACK-VERSION.webp';
@@ -98,6 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         description: post.metaDescription,
         datePublished: post.publishedAt,
         dateModified: post.updatedAt,
+        inLanguage: locale,
         author: {
           '@type': 'Organization',
           name: 'AnyVideoDownloader Editorial Team',
@@ -113,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://anyvideodownloader.app/en/blog/${post.slug}`
+          '@id': canonicalUrl
         },
         image: imageUrl
       }

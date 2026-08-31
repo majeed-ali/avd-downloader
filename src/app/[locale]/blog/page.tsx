@@ -3,6 +3,12 @@ import Image from 'next/image';
 import { getAllBlogPosts } from '@/lib/blog-data';
 import { Breadcrumbs } from '@/app/_client/components/shared/breadcrumbs';
 import { Link } from '@/i18n/routing';
+import {
+  getCanonicalUrl,
+  getHreflangAlternates,
+  getRobotsMetadata,
+  isRouteIndexable
+} from '@/lib/seo';
 
 export const runtime = 'edge';
 
@@ -16,15 +22,18 @@ export async function generateMetadata({
   params
 }: BlogIndexProps): Promise<Metadata> {
   const { locale } = await params;
-  const canonicalUrl = `/${locale}/blog`;
+  const isIndexable = isRouteIndexable(locale, 'blog');
+  const canonicalUrl = getCanonicalUrl(locale, '/blog');
 
   return {
     title: 'Video Downloader Guides & Tutorials | AnyVideoDownloader',
     description:
       'Step-by-step guides and tips on downloading videos from YouTube, Instagram, Facebook, and more on iPhone, Android, PC, and Mac.',
     alternates: {
-      canonical: canonicalUrl
+      canonical: canonicalUrl,
+      languages: getHreflangAlternates('blog', '/blog')
     },
+    robots: getRobotsMetadata(isIndexable),
     openGraph: {
       title: 'Video Downloader Guides & Tutorials | AnyVideoDownloader',
       description:
@@ -59,11 +68,13 @@ export default async function BlogIndexPage({ params }: BlogIndexProps) {
     { name: 'Guides', url: '/blog' }
   ];
 
+  const canonicalUrl = getCanonicalUrl(locale, '/blog');
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Video Downloader Guides & Tutorials',
-    url: `https://anyvideodownloader.app/${locale}/blog`,
+    url: canonicalUrl,
     description:
       'Step-by-step tutorials and expert guides on video downloading across devices and platforms.'
   };
