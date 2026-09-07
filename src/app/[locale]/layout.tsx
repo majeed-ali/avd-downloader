@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import { inter_sans } from "../_client/libs/fonts";
 import { Header } from "../_client/components/layout/header";
 import { Footer } from "../_client/components/layout/footer";
@@ -47,7 +47,7 @@ type LayoutProps = {
 
 type AppLocale = (typeof routing.locales)[number]
 
-const Layout = async({ children, params }: LayoutProps) => {
+const Layout = async ({ children, params }: LayoutProps) => {
   const { locale } = await params
 
   if (!routing.locales.includes(locale as AppLocale)) {
@@ -59,12 +59,12 @@ const Layout = async({ children, params }: LayoutProps) => {
   return (
     <html suppressHydrationWarning lang={locale}>
       <head>
-        {/* Adsterra popunder - temporarily disabled */}
-        {/* <Script
+        {/* Adsterra popunder - load before </head> */}
+        <Script
           id="adsterra-popunder"
           strategy="beforeInteractive"
-          src="https://pl30684928.effectivecpmnetwork.com/01/15/cd/0115cd0ae2edf9dd0448fc07f212003f.js"
-        /> */}
+          src="https://pl30684928.profitableratecpmnetwork.com/01/15/cd/0115cd0ae2edf9dd0448fc07f212003f.js"
+        />
       </head>
 
       <body
@@ -107,12 +107,12 @@ const Layout = async({ children, params }: LayoutProps) => {
           </NextIntlClientProvider>
         </ThemeProvider>
 
-        {/* Adsterra social bar - temporarily disabled */}
-        {/* <Script
+        {/* Adsterra social bar - insert right above </body> */}
+        <Script
           id="adsterra-social-bar"
           strategy="afterInteractive"
-          src="https://pl30684930.effectivecpmnetwork.com/9c/97/76/9c9776b971a082165b584616cbf8a79a.js"
-        /> */}
+          src="https://pl30684930.profitableratecpmnetwork.com/9c/97/76/9c9776b971a082165b584616cbf8a79a.js"
+        />
       </body>
     </html>
   );
