@@ -1,12 +1,22 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const ADSTERRA_NATIVE_SRC =
-  "https://pl30684929.effectivecpmnetwork.com/4ef3dd7b8121704064301be90d861f05/invoke.js";
+  "https://pl30684929.profitableratecpmnetwork.com/4ef3dd7b8121704064301be90d861f05/invoke.js";
 
 const ADSTERRA_NATIVE_CONTAINER_ID =
   "container-4ef3dd7b8121704064301be90d861f05";
+
+export const ADSTERRA_SMARTLINK_URL =
+  "https://www.profitableratecpmnetwork.com/p46j2c2n9e?key=62106653e66b16b2dbf15a39c9985ad7";
+
+export const ADSTERRA_BANNER_728X90_SRC =
+  "https://www.highrevenueformat.com/e822da9f0846cb978f11b9541b285926/invoke.js";
+
+export const ADSTERRA_BANNER_728X90_KEY =
+  "e822da9f0846cb978f11b9541b285926";
 
 type AdBannerProps =
   | {
@@ -24,7 +34,50 @@ type AdBannerProps =
   | {
       type: "adsterra-native";
       className?: string;
+    }
+  | {
+      type: "adsterra-728x90";
+      className?: string;
+    }
+  | {
+      type: "adsterra-banner-728x90";
+      className?: string;
     };
+
+function Adsterra728x90Banner() {
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = bannerRef.current;
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const confScript = document.createElement("script");
+    confScript.type = "text/javascript";
+    confScript.text = `atOptions = {
+      'key' : '${ADSTERRA_BANNER_728X90_KEY}',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };`;
+
+    const invokeScript = document.createElement("script");
+    invokeScript.type = "text/javascript";
+    invokeScript.src = ADSTERRA_BANNER_728X90_SRC;
+
+    container.appendChild(confScript);
+    container.appendChild(invokeScript);
+  }, []);
+
+  return (
+    <div
+      ref={bannerRef}
+      className="mx-auto flex min-h-[90px] w-full max-w-[728px] items-center justify-center overflow-hidden"
+    />
+  );
+}
 
 export function AdBanner(props: AdBannerProps) {
   const containerClassName = [
@@ -94,12 +147,36 @@ export function AdBanner(props: AdBannerProps) {
     );
   }
 
-  return (
-    <AdPlaceholder
-      className={containerClassName}
-      label={props.label}
-    />
-  );
+  if (
+    props.type === "adsterra-728x90" ||
+    props.type === "adsterra-banner-728x90"
+  ) {
+    return (
+      <aside
+        className={containerClassName}
+        aria-label="Advertisement"
+      >
+        <div className="w-full">
+          <div className="mb-1 text-center text-[10px] uppercase tracking-widest text-slate-400">
+            Advertisement
+          </div>
+
+          <Adsterra728x90Banner />
+        </div>
+      </aside>
+    );
+  }
+
+  if (props.type === "placeholder") {
+    return (
+      <AdPlaceholder
+        className={containerClassName}
+        label={props.label}
+      />
+    );
+  }
+
+  return null;
 }
 
 function AdPlaceholder({
