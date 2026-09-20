@@ -119,4 +119,4 @@ const Layout = async ({ children, params }: LayoutProps) => {
 }
 
 
-export default Layout
+export default Layout 
