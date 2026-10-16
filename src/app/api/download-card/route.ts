@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { debugLog } from "@/lib/debug-log";
+import { recordSubmission } from "@/lib/tracking/tracker";
 
-export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 const ALLOWED_FORMATS = new Set([
@@ -27,17 +27,31 @@ type UpstreamResponse = {
   progress_url?: string | null;
   download_url?: string | null;
   url?: string | null;
+  submissionId?: string;
   [key: string]: unknown;
 };
 
 export async function GET(request: Request) {
-  try {
-    const requestUrl = new URL(request.url);
-    const videoUrl = requestUrl.searchParams.get("url");
+  const startTime = Date.now();
+  const requestUrl = new URL(request.url);
+  const videoUrl = requestUrl.searchParams.get("url") || "";
+  const requestedFormat = requestUrl.searchParams.get("format") || "720";
+  const toolName = requestUrl.searchParams.get("tool") || "downloader";
 
+  try {
     if (!videoUrl) {
       await debugLog("download.validation-error", {
         reason: "missing-video-url",
+      });
+
+      await recordSubmission({
+        originalUrl: videoUrl,
+        tool: toolName,
+        headers: request.headers,
+        status: "failed",
+        errorCategory: "validation_error",
+        errorMessage: "A video URL is required",
+        processingDurationMs: Date.now() - startTime,
       });
 
       return NextResponse.json(
@@ -51,13 +65,20 @@ export async function GET(request: Request) {
       );
     }
 
-    const requestedFormat =
-  requestUrl.searchParams.get("format") || "720";
-
     if (!ALLOWED_FORMATS.has(requestedFormat)) {
       await debugLog("download.validation-error", {
         reason: "unsupported-format",
         requestedFormat,
+      });
+
+      await recordSubmission({
+        originalUrl: videoUrl,
+        tool: toolName,
+        headers: request.headers,
+        status: "failed",
+        errorCategory: "validation_error",
+        errorMessage: "The selected format is not supported",
+        processingDurationMs: Date.now() - startTime,
       });
 
       return NextResponse.json(
@@ -85,6 +106,16 @@ export async function GET(request: Request) {
         reason: "invalid-video-url",
       });
 
+      await recordSubmission({
+        originalUrl: videoUrl,
+        tool: toolName,
+        headers: request.headers,
+        status: "failed",
+        errorCategory: "validation_error",
+        errorMessage: "The supplied video URL is invalid",
+        processingDurationMs: Date.now() - startTime,
+      });
+
       return NextResponse.json(
         {
           success: false,
@@ -103,6 +134,16 @@ export async function GET(request: Request) {
         reason: "missing-api-key",
       });
 
+      await recordSubmission({
+        originalUrl: videoUrl,
+        tool: toolName,
+        headers: request.headers,
+        status: "failed",
+        errorCategory: "configuration_error",
+        errorMessage: "SAVENOW_API_KEY is not configured",
+        processingDurationMs: Date.now() - startTime,
+      });
+
       return NextResponse.json(
         {
           success: false,
@@ -114,14 +155,14 @@ export async function GET(request: Request) {
       );
     }
 
-   const params = new URLSearchParams({
-    url: videoUrl,
-    format: requestedFormat,
-    apikey: apiKey,
-    add_info: "1",
-    allow_extended_duration: "1",
-    no_merge: "0",
-  });
+    const params = new URLSearchParams({
+      url: videoUrl,
+      format: requestedFormat,
+      apikey: apiKey,
+      add_info: "1",
+      allow_extended_duration: "1",
+      no_merge: "0",
+    });
 
     const upstreamResponse = await fetch(
       `https://p.savenow.to/ajax/download.php?${params.toString()}`,
@@ -146,17 +187,44 @@ export async function GET(request: Request) {
         responsePreview: responseText.slice(0, 200),
       });
 
+      await recordSubmission({
+        originalUrl: videoUrl,
+        tool: toolName,
+        headers: request.headers,
+        status: "failed",
+        errorCategory: "upstream_error",
+        errorMessage: "The download service returned an invalid response",
+        processingDurationMs: Date.now() - startTime,
+      });
+
       return NextResponse.json(
         {
           success: false,
-          message:
-            "The download service returned an invalid response",
+          message: "The download service returned an invalid response",
         },
         {
           status: 502,
         }
       );
     }
+
+    const isSuccessful = Boolean(data.success && data.success !== 0);
+    const durationMs = Date.now() - startTime;
+
+    // Record submission in centralized SQLite tracking
+    const submissionId = await recordSubmission({
+      originalUrl: videoUrl,
+      tool: toolName,
+      headers: request.headers,
+      status: isSuccessful ? "success" : "failed",
+      errorCategory: isSuccessful ? undefined : "upstream_rejected",
+      errorMessage: isSuccessful ? undefined : (data.message || data.text || undefined),
+      processingDurationMs: durationMs,
+      videoTitle: typeof data.title === "string" ? data.title : undefined,
+      resolution: requestedFormat,
+    });
+
+    data.submissionId = submissionId;
 
     await debugLog("download.initial-response", {
       requestedFormat,
@@ -168,23 +236,28 @@ export async function GET(request: Request) {
       message: data.message,
       hasContent: Boolean(data.content),
       hasProgressUrl: Boolean(data.progress_url),
-      hasDownloadUrl: Boolean(
-        data.download_url || data.url
-      ),
+      hasDownloadUrl: Boolean(data.download_url || data.url),
     });
 
     return NextResponse.json(data, {
-      status: upstreamResponse.ok
-        ? 200
-        : upstreamResponse.status,
+      status: upstreamResponse.ok ? 200 : upstreamResponse.status,
       headers: {
-        "Cache-Control":
-          "no-store, no-cache, must-revalidate",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
       },
     });
   } catch (error) {
     await debugLog("download.initial-error", {
       error,
+    });
+
+    await recordSubmission({
+      originalUrl: videoUrl,
+      tool: toolName,
+      headers: request.headers,
+      status: "failed",
+      errorCategory: "server_error",
+      errorMessage: error instanceof Error ? error.message : "An unexpected server error occurred",
+      processingDurationMs: Date.now() - startTime,
     });
 
     return NextResponse.json(

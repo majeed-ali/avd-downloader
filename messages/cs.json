@@ -617,5 +617,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Sledovat online",
+    "metaTitle": "Sledovat online – Přehrávač a stahovač videí TeraBox a Cloud",
+    "metaDescription": "Sledujte a stahujte videa z TeraBox, 1024Tera, NephoBox přímo v prohlížeči. Rychle, zdarma a bez nutnosti registrace.",
+    "hero": {
+      "tag": "Cloudový přehrávač a stahovač",
+      "title": "Online Přehrávač Videa",
+      "description": "Přehrávejte a stahujte videosoubory z TeraBoxu, 1024Tera a dalších cloudových služeb přímo ve svém prohlížeči."
+    },
+    "form": {
+      "placeholder": "Vložte podporovaný odkaz (např. terabox.com/s/1...)",
+      "paste": "Vložit",
+      "clear": "Vymazat",
+      "watch": "Přehrát video",
+      "analyzing": "Analyzuji odkaz na video…",
+      "supportedDomains": "Podporované cloudové služby"
+    },
+    "player": {
+      "videoPreview": "Video připraveno k přehrání",
+      "download": "Stáhnout video",
+      "copyLink": "Kopírovat odkaz",
+      "copied": "Zkopírováno!",
+      "quality": "Kvalita",
+      "source": "Zdroj",
+      "duration": "Délka",
+      "size": "Velikost souboru"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Co je Sledovat online a jak funguje?",
+          "answer": "Je to nástroj pro přehrávání a stahování veřejných videí z TeraBoxu a dalších cloudů přímo v prohlížeči."
+        },
+        {
+          "question": "Které cloudové domény jsou podporovány?",
+          "answer": "Podporujeme terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com i flezen.com."
+        },
+        {
+          "question": "Lze stahovat soubory chráněné heslem?",
+          "answer": "Ne, soubory chráněné heslem nebo vypršené nelze přehrát."
+        },
+        {
+          "question": "Je nutná registrace?",
+          "answer": "Ne, na AnyVideoDownloader není nutná žádná registrace."
+        },
+        {
+          "question": "Probíhá přehrávání přímo v prohlížeči?",
+          "answer": "Ano, prostřednictvím přehrávače HTML5."
+        }
+      ]
+    }
   }
 }

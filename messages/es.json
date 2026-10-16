@@ -213,7 +213,6 @@
         ]
       }
     },
-
     "ytmp3": {
       "fullname": "YouTube a MP3 320kbps",
       "hero": {
@@ -617,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Ver en línea",
+    "metaTitle": "Ver en línea – Reproductor y Descargador de Vídeos TeraBox y Cloud",
+    "metaDescription": "Mira y descarga vídeos de TeraBox, 1024Tera, NephoBox y otras plataformas cloud directamente en tu navegador. Rápido, gratis y sin registro.",
+    "hero": {
+      "tag": "Reproductor y Descargador Cloud",
+      "title": "Reproductor de Vídeo en Línea",
+      "description": "Transmite y descarga archivos de vídeo de TeraBox, 1024Tera, NephoBox y servicios cloud compatibles directamente en tu navegador sin instalar programas."
+    },
+    "form": {
+      "placeholder": "Pega el enlace cloud admitido (ej. terabox.com/s/1...)",
+      "paste": "Pegar",
+      "clear": "Borrar",
+      "watch": "Ver Vídeo",
+      "analyzing": "Analizando enlace de vídeo…",
+      "supportedDomains": "Servicios Cloud Compatibles"
+    },
+    "player": {
+      "videoPreview": "Vídeo listo para reproducir",
+      "download": "Descargar Vídeo",
+      "copyLink": "Copiar Enlace",
+      "copied": "¡Copiado!",
+      "quality": "Calidad",
+      "source": "Fuente",
+      "duration": "Duración",
+      "size": "Tamaño"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "¿Qué es Ver en línea y cómo funciona?",
+          "answer": "Ver en línea es una herramienta web para reproducir y descargar vídeos públicos alojados en TeraBox, 1024Tera, NephoBox y otros servicios sin registrarte."
+        },
+        {
+          "question": "¿Qué dominios son compatibles?",
+          "answer": "Admitimos terabox.com, 1024tera.com, teraboxapp.com, nephobox.com, 4funbox.com, mirrobox.com, momerybox.com, tibibox.com, freeterabox.com, diskwala.com y flezen.com."
+        },
+        {
+          "question": "¿Puedo ver archivos protegidos por contraseña o eliminados?",
+          "answer": "No. Respetamos los permisos del creador. Los archivos protegidos por clave o caducados no se pueden reproducir."
+        },
+        {
+          "question": "¿Tengo que registrarme en AnyVideoDownloader?",
+          "answer": "No, no se necesita registro ni cuenta para utilizar el reproductor."
+        },
+        {
+          "question": "¿La reproducción se realiza en el navegador?",
+          "answer": "Sí, la reproducción funciona a través del reproductor HTML5 estándar de tu navegador."
+        }
+      ]
     }
   }
 }

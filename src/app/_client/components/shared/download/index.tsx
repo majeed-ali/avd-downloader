@@ -720,6 +720,7 @@ function DownloadCard({
 }) {
   const frameId = useId();
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const submissionIdRef = useRef<string | null>(null);
 
   const [cardHtml, setCardHtml] = useState("");
   const [downloadUrl, setDownloadUrl] = useState("");
@@ -767,6 +768,17 @@ function DownloadCard({
 
       const handler = (e: MouseEvent) => {
         e.preventDefault();
+
+        if (submissionIdRef.current) {
+          fetch("/api/track/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              submissionId: submissionIdRef.current,
+              eventType: "download_clicked",
+            }),
+          }).catch(() => {});
+        }
 
         try {
           // First attempt: create and click an anchor in the parent
@@ -1074,6 +1086,8 @@ function DownloadCard({
           downloadable
         )}&format=${encodeURIComponent(format)}`
       );
+
+      submissionIdRef.current = (initialData as { submissionId?: string }).submissionId || null;
 
       const finalUrl = updateCard(initialData);
 

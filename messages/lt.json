@@ -329,13 +329,13 @@
         ],
         "heading": "Maximize Your YouTube Viewing Experience With YouTube Playlist Downloader",
         "intro2": [
-         "Are you tired of saving your favorite YouTube videos one by one? What if you could save all those pet videos, DIY guides, and inspiring TED Talks in one go?",
-         "That's where the YouTube Playlist Downloader comes in. It offers you a super easy way to save several videos without much effort.",
-         "This cool tool works like magic. Instead of downloading videos individually, it grabs the entire playlists super fast and downloads them on your preferred device for offline viewing.",
-         "The best part is its ease of use. With this tool, you don't need to worry about slow internet or losing access to your favorite videos.",
-         "Now, you can binge-watch them without interruptions. Whether it's learning stuff or catching up on the latest vlogs, this downloader has your back.",
-         "And guess what? It's free! No need to pay for all these handy features.",
-         "No more opening tons of tabs or trying to download multiple videos at once. With the YouTube Playlist Downloader, you can watch your saved videos whenever you want, hassle-free."
+          "Are you tired of saving your favorite YouTube videos one by one? What if you could save all those pet videos, DIY guides, and inspiring TED Talks in one go?",
+          "That's where the YouTube Playlist Downloader comes in. It offers you a super easy way to save several videos without much effort.",
+          "This cool tool works like magic. Instead of downloading videos individually, it grabs the entire playlists super fast and downloads them on your preferred device for offline viewing.",
+          "The best part is its ease of use. With this tool, you don't need to worry about slow internet or losing access to your favorite videos.",
+          "Now, you can binge-watch them without interruptions. Whether it's learning stuff or catching up on the latest vlogs, this downloader has your back.",
+          "And guess what? It's free! No need to pay for all these handy features.",
+          "No more opening tons of tabs or trying to download multiple videos at once. With the YouTube Playlist Downloader, you can watch your saved videos whenever you want, hassle-free."
         ],
         "list": [
           {
@@ -616,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Žiūrėti internetu",
+    "metaTitle": "Žiūrėti internetu – TeraBox ir debesijos vaizdo įrašų leistuvas bei atsisiuntėjas",
+    "metaDescription": "Žiūrėkite ir atsisiųskite vaizdo įrašus iš TeraBox, 1024Tera, NephoBox tiesiogiai naršyklėje. Greita, nemokama ir be registracijos.",
+    "hero": {
+      "tag": "Debesijos vaizdo grotuvas ir atsisiuntėjas",
+      "title": "Internetinis Vaizdo Grotuvas",
+      "description": "Žiūrėkite ir atsisiųskite vaizdo failus iš TeraBox ir palaikomų debesijos paslaugų tiesiogiai naršyklėje be papildomų programų."
+    },
+    "form": {
+      "placeholder": "Įklijuokite nuorodą (pvz., terabox.com/s/1...)",
+      "paste": "Įklijuoti",
+      "clear": "Išvalyti",
+      "watch": "Žiūrėti vaizdo įrašą",
+      "analyzing": "Analizuojama vaizdo nuoroda…",
+      "supportedDomains": "Palaikomos debesijos paslaugos"
+    },
+    "player": {
+      "videoPreview": "Vaizdo įrašas paruoštas žiūrėjimui",
+      "download": "Atsisiųsti vaizdo įrašą",
+      "copyLink": "Kopijuoti nuorodą",
+      "copied": "Nukopijuota!",
+      "quality": "Kokybė",
+      "source": "Šaltinis",
+      "duration": "Trukmė",
+      "size": "Failo dydis"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Kas yra 'Žiūrėti internetu' ir kaip tai veikia?",
+          "answer": "Tai internetinis įrankis, leidžiantis žiūrėti ir atsisiųsti viešus vaizdo įrašus iš TeraBox ir kitų debesų saugyklų."
+        },
+        {
+          "question": "Kokie domenai palaikomi?",
+          "answer": "Palaikomi terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com ir flezen.com."
+        },
+        {
+          "question": "Ar galima atsisiųsti slaptažodžiu apsaugotus failus?",
+          "answer": "Ne, slaptažodžiu apsaugoti arba pasibaigusio galiojimo failai negali būti atverti."
+        },
+        {
+          "question": "Ar reikia susikurti paskyrą?",
+          "answer": "Ne, jokia registracija nėra reikalinga."
+        },
+        {
+          "question": "Ar vaizdo įrašas leidžiamas naršyklėje?",
+          "answer": "Taip, naudojant HTML5 leistuvą."
+        }
+      ]
     }
   }
 }

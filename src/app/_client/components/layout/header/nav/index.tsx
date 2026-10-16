@@ -54,6 +54,10 @@ const links = [
   {
     label: "Vimeo downloader",
     link: "/vimeo-downloader"
+  },
+  {
+    label: "TeraBox Downloader",
+    link: "/terabox-downloader"
   }
 ]
 
@@ -91,6 +95,13 @@ export const HeaderNav = ({ onClose }: HeaderNavProps) =>{
             href="#downloadform">
             Start Downloading
           </a>
+        </li>
+        <li className="mb-4 lg:mb-0">
+          <Link
+            className="text-[11px] uppercase tracking-[0.16em] text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+            href="/terabox-downloader">
+            TeraBox Downloader
+          </Link>
         </li>
         <li className="mb-4 lg:mb-0">
           <Link

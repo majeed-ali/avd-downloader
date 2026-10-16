@@ -515,7 +515,6 @@
         ]
       }
     },
-
     "y1080d": {
       "fullname": "YouTube 1080p Downloader",
       "hero": {
@@ -617,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Se online",
+    "metaTitle": "Se online – TeraBox & Cloud Video Afspiller og Downloader",
+    "metaDescription": "Se og download videoer fra TeraBox, 1024Tera, NephoBox og andre cloud-tjenester direkte i browseren. Hurtigt, gratis og uden registrering.",
+    "hero": {
+      "tag": "Cloud Video Afspiller & Downloader",
+      "title": "Online Videoafspiller",
+      "description": "Stream og download videofiler fra TeraBox, 1024Tera og understøttede cloud-tjenester direkte i din browser uden software."
+    },
+    "form": {
+      "placeholder": "Indsæt cloud-link (f.eks. terabox.com/s/1...)",
+      "paste": "Indsæt",
+      "clear": "Ryd",
+      "watch": "Se video",
+      "analyzing": "Analyserer videolink…",
+      "supportedDomains": "Understøttede cloud-tjenester"
+    },
+    "player": {
+      "videoPreview": "Video klar til afspilning",
+      "download": "Download video",
+      "copyLink": "Kopiér link",
+      "copied": "Kopieret!",
+      "quality": "Kvalitet",
+      "source": "Kilde",
+      "duration": "Varighed",
+      "size": "Filstørrelse"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Hvad er Se online, og hvordan virker det?",
+          "answer": "Det er et webværktøj til at afspille og downloade offentlige videofiler fra TeraBox og andre cloud-tjenester direkte i din browser."
+        },
+        {
+          "question": "Hvilke cloud-domæner understøttes?",
+          "answer": "Vi understøtter terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com og flezen.com."
+        },
+        {
+          "question": "Kan jeg downloade adgangskodebeskyttede filer?",
+          "answer": "Nej, adgangskodebeskyttede eller udløbne links kan ikke tilgås."
+        },
+        {
+          "question": "Skal jeg oprette en konto?",
+          "answer": "Nej, ingen konto eller registrering er nødvendig."
+        },
+        {
+          "question": "Afspilles videoen direkte i browseren?",
+          "answer": "Ja, via den indbyggede HTML5-afspiller."
+        }
+      ]
     }
   }
 }

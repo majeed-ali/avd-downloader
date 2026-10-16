@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/cdn-cgi/']
+        disallow: ['/api/', '/cdn-cgi/', '/admin', '/admin/']
       }
     ],
     sitemap: 'https://anyvideodownloader.app/sitemap.xml'

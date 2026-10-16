@@ -329,13 +329,13 @@
         ],
         "heading": "Maximize Your YouTube Viewing Experience With YouTube Playlist Downloader",
         "intro2": [
-         "Are you tired of saving your favorite YouTube videos one by one? What if you could save all those pet videos, DIY guides, and inspiring TED Talks in one go?",
-         "That's where the YouTube Playlist Downloader comes in. It offers you a super easy way to save several videos without much effort.",
-         "This cool tool works like magic. Instead of downloading videos individually, it grabs the entire playlists super fast and downloads them on your preferred device for offline viewing.",
-         "The best part is its ease of use. With this tool, you don't need to worry about slow internet or losing access to your favorite videos.",
-         "Now, you can binge-watch them without interruptions. Whether it's learning stuff or catching up on the latest vlogs, this downloader has your back.",
-         "And guess what? It's free! No need to pay for all these handy features.",
-         "No more opening tons of tabs or trying to download multiple videos at once. With the YouTube Playlist Downloader, you can watch your saved videos whenever you want, hassle-free."
+          "Are you tired of saving your favorite YouTube videos one by one? What if you could save all those pet videos, DIY guides, and inspiring TED Talks in one go?",
+          "That's where the YouTube Playlist Downloader comes in. It offers you a super easy way to save several videos without much effort.",
+          "This cool tool works like magic. Instead of downloading videos individually, it grabs the entire playlists super fast and downloads them on your preferred device for offline viewing.",
+          "The best part is its ease of use. With this tool, you don't need to worry about slow internet or losing access to your favorite videos.",
+          "Now, you can binge-watch them without interruptions. Whether it's learning stuff or catching up on the latest vlogs, this downloader has your back.",
+          "And guess what? It's free! No need to pay for all these handy features.",
+          "No more opening tons of tabs or trying to download multiple videos at once. With the YouTube Playlist Downloader, you can watch your saved videos whenever you want, hassle-free."
         ],
         "list": [
           {
@@ -616,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "TeraBox Downloader",
+    "metaTitle": "TeraBox Player & Fast Downloader Online - No Login, Free",
+    "metaDescription": "Fast online TeraBox video player & direct downloader. Watch TeraBox links in 1080p HD or download direct MP4 files without login or app. Best IteraPlay alternative!",
+    "hero": {
+      "tag": "TeraBox & Cloud Media Player",
+      "title": "TeraBox Player & Fast Downloader Online",
+      "description": "Fast online TeraBox video player & direct downloader. Watch TeraBox links in 1080p HD or download direct MP4 files without login or app. Best IteraPlay alternative!"
+    },
+    "form": {
+      "placeholder": "Paste TeraBox link (e.g. 1024terabox.com/s/1... or terabox.com/s/1...)",
+      "paste": "Paste",
+      "clear": "Clear",
+      "watch": "Watch & Download",
+      "analyzing": "Analyzing video link…",
+      "supportedDomains": "Supported Platforms"
+    },
+    "player": {
+      "videoPreview": "Video Ready to Stream",
+      "download": "Download Video",
+      "copyLink": "Copy Link",
+      "copied": "Copied!",
+      "quality": "Quality",
+      "source": "Source",
+      "duration": "Duration",
+      "size": "File Size"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "What is TeraBox Video Downloader and how does it work?",
+          "answer": "TeraBox Video Downloader is an in-browser media utility that lets you inspect, stream, and download public video files hosted on supported cloud-sharing platforms (such as TeraBox, 1024TeraBox, 1024Tera, NephoBox, and Flezen) without registering or installing third-party apps."
+        },
+        {
+          "question": "Which cloud sharing domains are supported?",
+          "answer": "We support public share URLs from terabox.com, 1024terabox.com, 1024tera.com, terabox.app, teraboxapp.com, nephobox.com, 4funbox.com, mirrobox.com, momerybox.com, tibibox.com, freeterabox.com, diskwala.com, and flezen.com."
+        },
+        {
+          "question": "Can I download password-protected or expired files?",
+          "answer": "No. AnyVideoDownloader strictly honors content owners' access controls and privacy settings. If a cloud link requires a password, has expired, or was removed by its uploader, it cannot be streamed or downloaded."
+        },
+        {
+          "question": "Do I need to create an account on AnyVideoDownloader?",
+          "answer": "No account, email, or registration is required on AnyVideoDownloader. You can paste your link and watch or download immediately."
+        },
+        {
+          "question": "Is video playback done directly from the browser?",
+          "answer": "Yes. Whenever the underlying service provides a browser-compatible public media source, the video streams directly within your browser's native HTML5 player for maximum speed and privacy."
+        }
+      ]
     }
   }
 }

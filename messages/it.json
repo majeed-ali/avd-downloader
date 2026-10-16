@@ -614,5 +614,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Guarda Online",
+    "metaTitle": "Guarda Online – Player e Downloader Video TeraBox e Cloud",
+    "metaDescription": "Guarda e scarica video da TeraBox, 1024Tera, NephoBox e altre piattaforme cloud direttamente nel browser. Veloce, gratuito e senza registrazione.",
+    "hero": {
+      "tag": "Cloud Video Player & Downloader",
+      "title": "Riproduttore Video Online",
+      "description": "Riproduci e scarica file video da TeraBox, 1024Tera, NephoBox e servizi cloud supportati direttamente nel tuo browser senza app aggiuntive."
+    },
+    "form": {
+      "placeholder": "Incolla il link cloud supportato (es. terabox.com/s/1...)",
+      "paste": "Incolla",
+      "clear": "Cancella",
+      "watch": "Guarda Video",
+      "analyzing": "Analisi del link video in corso…",
+      "supportedDomains": "Servizi Cloud Supportati"
+    },
+    "player": {
+      "videoPreview": "Video pronto per la riproduzione",
+      "download": "Scarica Video",
+      "copyLink": "Copia Link",
+      "copied": "Copiato!",
+      "quality": "Qualità",
+      "source": "Origine",
+      "duration": "Durata",
+      "size": "Dimensioni"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Cos'è Guarda Online e come funziona?",
+          "answer": "Guarda Online ti consente di guardare e scaricare video pubblici da TeraBox, NephoBox e altri cloud direttamente online."
+        },
+        {
+          "question": "Quali domini cloud sono supportati?",
+          "answer": "Supportiamo terabox.com, 1024tera.com, nephobox.com, 4funbox.com, freeterabox.com, diskwala.com, flezen.com e affini."
+        },
+        {
+          "question": "Posso scaricare file protetti da password?",
+          "answer": "No, i link protetti da password o scaduti non possono essere riprodotti senza autorizzazione."
+        },
+        {
+          "question": "È richiesta la registrazione?",
+          "answer": "Nessun account o registrazione è richiesta su AnyVideoDownloader."
+        },
+        {
+          "question": "Il video viene riprodotto direttamente nel browser?",
+          "answer": "Sì, tramite il lettore nativo HTML5 del browser."
+        }
+      ]
+    }
   }
 }

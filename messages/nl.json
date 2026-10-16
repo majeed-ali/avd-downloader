@@ -417,7 +417,6 @@
         ]
       }
     },
-
     "ytwav": {
       "fullname": "YouTube naar WAV",
       "hero": {
@@ -617,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Online Kijken",
+    "metaTitle": "Online Kijken – TeraBox & Cloud Video's Streamen en Downloaden",
+    "metaDescription": "Bekijk en download video's van TeraBox, 1024Tera, NephoBox en andere cloudservices direct in uw browser. Snel, gratis en zonder registratie.",
+    "hero": {
+      "tag": "Cloud Videospeler & Downloader",
+      "title": "Online Videospeler",
+      "description": "Stream en download videobestanden van TeraBox, 1024Tera, NephoBox en ondersteunde cloudplatformen direct in uw browser."
+    },
+    "form": {
+      "placeholder": "Plak ondersteunde cloudlink (bijv. terabox.com/s/1...)",
+      "paste": "Plakken",
+      "clear": "Wissen",
+      "watch": "Video Bekijken",
+      "analyzing": "Videolink analyseren…",
+      "supportedDomains": "Ondersteunde Clouddomeinen"
+    },
+    "player": {
+      "videoPreview": "Video klaar om af te spelen",
+      "download": "Video Downloaden",
+      "copyLink": "Link Kopiëren",
+      "copied": "Gekopieerd!",
+      "quality": "Kwaliteit",
+      "source": "Bron",
+      "duration": "Duur",
+      "size": "Bestandsgrootte"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Wat is Online Kijken en hoe werkt het?",
+          "answer": "Met Online Kijken kunt u openbare videobestanden van TeraBox en verwante clouddiensten direct in uw browser afspelen en downloaden."
+        },
+        {
+          "question": "Welke clouddomeinen worden ondersteund?",
+          "answer": "Ondersteund worden terabox.com, 1024tera.com, nephobox.com, 4funbox.com, freeterabox.com, diskwala.com en flezen.com."
+        },
+        {
+          "question": "Kan ik met een wachtwoord beveiligde bestanden downloaden?",
+          "answer": "Nee, met een wachtwoord beveiligde of verlopen bestanden kunnen niet worden geopend."
+        },
+        {
+          "question": "Moet ik een account aanmaken?",
+          "answer": "Nee, er is geen account of registratie vereist op AnyVideoDownloader."
+        },
+        {
+          "question": "Wordt de video direct in de browser afgespeeld?",
+          "answer": "Ja, via de standaard HTML5-videospeler van uw browser."
+        }
+      ]
     }
   }
 }

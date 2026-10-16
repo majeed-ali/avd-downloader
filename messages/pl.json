@@ -602,5 +602,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Oglądaj online",
+    "metaTitle": "Oglądaj online – Odtwarzacz i pobieracz wideo TeraBox i Cloud",
+    "metaDescription": "Oglądaj i pobieraj filmy z TeraBox, 1024Tera, NephoBox i innych chmur bezpośrednio w przeglądarce. Szybko, za darmo i bez rejestracji.",
+    "hero": {
+      "tag": "Odtwarzacz i pobieracz plików z chmury",
+      "title": "Internetowy Odtwarzacz Wideo",
+      "description": "Oglądaj i pobieraj pliki wideo z serwisów TeraBox, 1024Tera, NephoBox i innych obsługiwanych chmur bezpośrednio w przeglądarce."
+    },
+    "form": {
+      "placeholder": "Wklej obsługiwany link (np. terabox.com/s/1...)",
+      "paste": "Wklej",
+      "clear": "Wyczyść",
+      "watch": "Oglądaj wideo",
+      "analyzing": "Analizowanie linku wideo…",
+      "supportedDomains": "Obsługiwane serwisy chmurowe"
+    },
+    "player": {
+      "videoPreview": "Wideo gotowe do odtworzenia",
+      "download": "Pobierz wideo",
+      "copyLink": "Kopiuj link",
+      "copied": "Skopiowano!",
+      "quality": "Jakość",
+      "source": "Źródło",
+      "duration": "Czas trwania",
+      "size": "Rozmiar pliku"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Czym jest Oglądaj online i jak działa?",
+          "answer": "Oglądaj online to narzędzie umożliwiające odtwarzanie i pobieranie publicznych filmów z serwisów TeraBox i powiązanych chmur w przeglądarce."
+        },
+        {
+          "question": "Jakie domeny są obsługiwane?",
+          "answer": "Obsługujemy terabox.com, 1024tera.com, nephobox.com, 4funbox.com, freeterabox.com, diskwala.com, flezen.com i pokrewne."
+        },
+        {
+          "question": "Czy mogę pobierać pliki chronione hasłem lub wygasłe?",
+          "answer": "Nie. Przestrzegamy zabezpieczeń autorów – pliki z hasłem lub usunięte nie mogą być odtworzone."
+        },
+        {
+          "question": "Czy muszę zakładać konto na AnyVideoDownloader?",
+          "answer": "Nie, rejestracja nie jest wymagana."
+        },
+        {
+          "question": "Czy wideo odtwarzane jest bezpośrednio w przeglądarce?",
+          "answer": "Tak, przy użyciu standardowego odtwarzacza HTML5."
+        }
+      ]
+    }
   }
 }

@@ -94,6 +94,36 @@ const nextConfig = {
 				source: '/:locale/terms-of-service',
 				destination: '/:locale',
 				permanent: true
+			},
+			{
+				source: '/watch-online',
+				destination: '/en/terabox-downloader',
+				permanent: true
+			},
+			{
+				source: '/:locale/watch-online',
+				destination: '/:locale/terabox-downloader',
+				permanent: true
+			},
+			{
+				source: '/terabox',
+				destination: '/en/terabox-downloader',
+				permanent: true
+			},
+			{
+				source: '/:locale/terabox',
+				destination: '/:locale/terabox-downloader',
+				permanent: true
+			},
+			{
+				source: '/terabox-video-downloader',
+				destination: '/en/terabox-downloader',
+				permanent: true
+			},
+			{
+				source: '/:locale/terabox-video-downloader',
+				destination: '/:locale/terabox-downloader',
+				permanent: true
 			}
 		];
 	},

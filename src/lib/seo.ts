@@ -18,6 +18,7 @@ export const CORE_TRANSLATED_TOOLS = [
   { slug: '/youtube-playlist-downloader', vdaKey: 'ypd' },
   { slug: '/youtube-to-wav', vdaKey: 'ytwav' },
   { slug: '/youtube-1080p-downloader', vdaKey: 'y1080d' },
+  { slug: '/terabox-downloader', vdaKey: 'watchOnline' },
 ] as const;
 
 export const NON_CORE_TOOLS = [

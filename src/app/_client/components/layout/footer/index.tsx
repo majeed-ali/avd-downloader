@@ -54,6 +54,10 @@ const links = [
     link: "/vimeo-downloader"
   },
   {
+    label: "TeraBox Downloader",
+    link: "/terabox-downloader"
+  },
+  {
     label: "Guides & Tutorials",
     link: "/blog"
   }

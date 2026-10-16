@@ -314,7 +314,6 @@
         ]
       }
     },
-
     "ypd": {
       "fullname": "YouTube atskaņošanas saraksta lejupielādētājs",
       "hero": {
@@ -418,7 +417,6 @@
         ]
       }
     },
-
     "ytwav": {
       "fullname": "YouTube uz WAV",
       "hero": {
@@ -517,7 +515,6 @@
         ]
       }
     },
-
     "y1080d": {
       "fullname": "YouTube 1080p Lejupielādētājs",
       "hero": {
@@ -619,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Skatīties tiešsaistē",
+    "metaTitle": "Skatīties tiešsaistē – TeraBox un Cloud Video Atskaņotājs un Lejupielādētājs",
+    "metaDescription": "Skatieties un lejupielādējiet video no TeraBox, 1024Tera, NephoBox tieši savā pārlūkprogrammā. Ātri, bez maksas un bez reģistrācijas.",
+    "hero": {
+      "tag": "Mākoņa video atskaņotājs un lejupielādētājs",
+      "title": "Tiešsaistes Video Atskaņotājs",
+      "description": "Straumējiet un lejupielādējiet video failus no TeraBox un atbalstītajiem mākoņpakalpojumiem tieši savā pārlūkprogrammā."
+    },
+    "form": {
+      "placeholder": "Ielīmējiet saiti (piem., terabox.com/s/1...)",
+      "paste": "Ielīmēt",
+      "clear": "Notīrīt",
+      "watch": "Skatīties video",
+      "analyzing": "Analizē video saiti…",
+      "supportedDomains": "Atbalstītie mākoņpakalpojumi"
+    },
+    "player": {
+      "videoPreview": "Video gatavs atskaņošanai",
+      "download": "Lejupielādēt video",
+      "copyLink": "Kopēt saiti",
+      "copied": "Nokopēts!",
+      "quality": "Kvalitāte",
+      "source": "Avots",
+      "duration": "Ilgums",
+      "size": "Faila izmērs"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Kas ir 'Skatīties tiešsaistē' un kā tas darbojas?",
+          "answer": "Tīmekļa rīks publisku video atskaņošanai un lejupielādei no TeraBox un citiem mākoņpakalpojumiem tieši pārlūkā."
+        },
+        {
+          "question": "Kuri mākoņdomēni tiek atbalstīti?",
+          "answer": "Tiek atbalstīti terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com un flezen.com."
+        },
+        {
+          "question": "Vai var lejupielādēt ar paroli aizsargātus failus?",
+          "answer": "Nē, ar paroli aizsargātus failus nav iespējams atvērt bez atļaujas."
+        },
+        {
+          "question": "Vai ir nepieciešama reģistrācija?",
+          "answer": "Nē, reģistrācija nav nepieciešama."
+        },
+        {
+          "question": "Vai video tiek atskaņots tieši pārlūkā?",
+          "answer": "Jā, izmantojot HTML5 atskaņotāju."
+        }
+      ]
     }
   }
 }

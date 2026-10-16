@@ -608,5 +608,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Glejte na spletu",
+    "metaTitle": "Glejte na spletu – Predvajalnik in prenosnik videoposnetkov TeraBox in Cloud",
+    "metaDescription": "Oglejte si in prenesite videoposnetke s platform TeraBox, 1024Tera, NephoBox neposredno v brskalniku. Hitro, brezplačno in brez registracije.",
+    "hero": {
+      "tag": "Oblačni predvajalnik in prenosnik",
+      "title": "Spletni Video Predvajalnik",
+      "description": "Predvajajte in prenašajte videoposnetke s platform TeraBox, 1024Tera in podprtih oblakov neposredno v svojem brskalniku."
+    },
+    "form": {
+      "placeholder": "Prilepite povezavo (npr. terabox.com/s/1...)",
+      "paste": "Prilepi",
+      "clear": "Počisti",
+      "watch": "Oglej si video",
+      "analyzing": "Analiziranje povezave…",
+      "supportedDomains": "Podprte oblačne storitve"
+    },
+    "player": {
+      "videoPreview": "Video pripravljen za predvajanje",
+      "download": "Prenesi video",
+      "copyLink": "Kopiraj povezavo",
+      "copied": "Kopirano!",
+      "quality": "Kakovost",
+      "source": "Vir",
+      "duration": "Trajanje",
+      "size": "Velikost datoteke"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Kaj je 'Glejte na spletu' in kako deluje?",
+          "answer": "To je spletno orodje za predvajanje in prenos javnih videoposnetkov iz TeraBoxa in drugih oblakov brez registracije."
+        },
+        {
+          "question": "Katere domene so podprte?",
+          "answer": "Podpiramo terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com in flezen.com."
+        },
+        {
+          "question": "Ali lahko prenesem datoteke, zaščitene z geslom?",
+          "answer": "Ne, povezav z geslom ali poteklih datotek ni mogoče predvajati."
+        },
+        {
+          "question": "Ali je potrebna registracija?",
+          "answer": "Ne, registracija ni potrebna."
+        },
+        {
+          "question": "Ali se video predvaja neposredno v brskalniku?",
+          "answer": "Da, preko brskalnikovega predvajalnika HTML5."
+        }
+      ]
+    }
   }
 }

@@ -5,6 +5,7 @@ import { Hero } from "@/app/_client/components/shared/hero";
 import { Partners } from "@/app/_client/components/shared/partners";
 import { FaqAccordion, FAQItem } from "@/app/_client/components/shared/faq-accordion";
 import { Breadcrumbs } from "@/app/_client/components/shared/breadcrumbs";
+import { permanentRedirect } from 'next/navigation';
 import {
   getCanonicalUrl,
   getHreflangAlternates,
@@ -381,6 +382,9 @@ const fallbackConfig: ToolConfig = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, vda } = await params;
+  if (vda === "watch-online" || vda === "terabox" || vda === "terabox-video-downloader" || vda === "terabox-downloader") {
+    permanentRedirect(`/${locale}/terabox-downloader`);
+  }
   const config = toolConfigs[vda] ?? fallbackConfig;
   const isCoreTool = Boolean(CORE_TOOL_SLUG_MAP[vda]);
   const category: RouteCategory = isCoreTool ? 'core-tool' : 'non-core-tool';
@@ -431,6 +435,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const Page = async ({ params }: PageProps) => {
   const { locale, vda } = await params;
+  if (vda === "watch-online" || vda === "terabox" || vda === "terabox-video-downloader" || vda === "terabox-downloader") {
+    permanentRedirect(`/${locale}/terabox-downloader`);
+  }
   const config = toolConfigs[vda] ?? fallbackConfig;
   const isCoreTool = Boolean(CORE_TOOL_SLUG_MAP[vda]);
   const pageUrl = getCanonicalUrl(locale, `/${vda}`);

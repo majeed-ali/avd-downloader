@@ -9,7 +9,6 @@
     "audio": "Audio",
     "video": "Vidéo"
   },
-
   "homepage": {
     "yvd": {
       "fullname": "Téléchargeur de Vidéos YouTube",
@@ -214,7 +213,6 @@
         ]
       }
     },
-
     "ytmp3": {
       "fullname": "YouTube vers MP3 320kbps",
       "hero": {
@@ -618,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "Regarder en ligne",
+    "metaTitle": "Regarder en ligne – Lecteur et Téléchargeur Vidéo TeraBox et Cloud",
+    "metaDescription": "Regardez et téléchargez des vidéos depuis TeraBox, 1024Tera, NephoBox et autres hébergeurs cloud directement dans votre navigateur. Rapide, gratuit et sans inscription.",
+    "hero": {
+      "tag": "Lecteur & Téléchargeur Cloud",
+      "title": "Lecteur Vidéo en Ligne",
+      "description": "Diffusez et téléchargez des vidéos depuis TeraBox, 1024Tera, NephoBox et autres services cloud directement dans votre navigateur, sans installer d'application."
+    },
+    "form": {
+      "placeholder": "Collez le lien cloud pris en charge (ex. terabox.com/s/1...)",
+      "paste": "Coller",
+      "clear": "Effacer",
+      "watch": "Regarder la vidéo",
+      "analyzing": "Analyse du lien vidéo…",
+      "supportedDomains": "Hébergeurs cloud pris en charge"
+    },
+    "player": {
+      "videoPreview": "Vidéo prête à diffuser",
+      "download": "Télécharger la vidéo",
+      "copyLink": "Copier le lien",
+      "copied": "Copié !",
+      "quality": "Qualité",
+      "source": "Source",
+      "duration": "Durée",
+      "size": "Taille du fichier"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Qu'est-ce que Regarder en ligne et comment cela fonctionne-t-il ?",
+          "answer": "Regarder en ligne permet d'analyser, de lire et de télécharger des vidéos publiques hébergées sur TeraBox, 1024Tera, NephoBox et d'autres plateformes cloud sans créer de compte."
+        },
+        {
+          "question": "Quels domaines de partage cloud sont pris en charge ?",
+          "answer": "Sont pris en charge : terabox.com, 1024tera.com, teraboxapp.com, nephobox.com, 4funbox.com, mirrobox.com, momerybox.com, tibibox.com, freeterabox.com, diskwala.com et flezen.com."
+        },
+        {
+          "question": "Puis-je télécharger des fichiers protégés par mot de passe ou expirés ?",
+          "answer": "Non, nous respectons strictement les contrôles d'accès des créateurs. Les fichiers protégés ou expirés ne peuvent pas être lus."
+        },
+        {
+          "question": "Dois-je créer un compte sur AnyVideoDownloader ?",
+          "answer": "Aucune inscription ni compte n'est requis sur notre site."
+        },
+        {
+          "question": "La lecture vidéo se fait-elle directement dans le navigateur ?",
+          "answer": "Oui, la vidéo est diffusée directement dans le lecteur HTML5 natif de votre navigateur."
+        }
+      ]
     }
   }
 }

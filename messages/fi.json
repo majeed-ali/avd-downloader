@@ -617,5 +617,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Katso verkossa",
+    "metaTitle": "Katso verkossa – TeraBox & Pilvivideoiden Toistin ja Lataaja",
+    "metaDescription": "Katso ja lataa videoita TeraBoxista, 1024Terasta, NephoBoxista suoraan selaimessasi. Nopeaa, ilmaista ja ilman rekisteröitymistä.",
+    "hero": {
+      "tag": "Pilvivideosoitin & Lataaja",
+      "title": "Online-Videotoistin",
+      "description": "Suoratoista ja lataa videotiedostoja TeraBoxista ja tuetuista pilvipalveluista suoraan selaimessasi ilman sovelluksia."
+    },
+    "form": {
+      "placeholder": "Liitä pilvilinkki (esim. terabox.com/s/1...)",
+      "paste": "Liitä",
+      "clear": "Tyhjennä",
+      "watch": "Katso video",
+      "analyzing": "Analysoidaan videolinkkiä…",
+      "supportedDomains": "Tuetut pilvipalvelut"
+    },
+    "player": {
+      "videoPreview": "Video valmis toistettavaksi",
+      "download": "Lataa video",
+      "copyLink": "Kopioi linkki",
+      "copied": "Kopioitu!",
+      "quality": "Laatu",
+      "source": "Lähde",
+      "duration": "Kesto",
+      "size": "Tiedostokoko"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Mitä Katso verkossa tarkoittaa ja miten se toimii?",
+          "answer": "Se on selaintyökalu julkisten videoiden toistamiseen ja lataamiseen TeraBoxista ja muista pilvipalveluista suoraan selaimessa."
+        },
+        {
+          "question": "Mitä verkkotunnuksia tuetaan?",
+          "answer": "Tuemme terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com ja flezen.com linkkejä."
+        },
+        {
+          "question": "Voinko ladata salasanasuojattuja tiedostoja?",
+          "answer": "Et, salasanasuojattuja tai vanhentuneita tiedostoja ei voi toistaa."
+        },
+        {
+          "question": "Tarvitseeko minun luoda tili?",
+          "answer": "Tiliä tai rekisteröitymistä ei tarvita."
+        },
+        {
+          "question": "Toistuuko video suoraan selaimessa?",
+          "answer": "Kyllä, suoraan selaimen natiivissa HTML5-soittimessa."
+        }
+      ]
+    }
   }
 }

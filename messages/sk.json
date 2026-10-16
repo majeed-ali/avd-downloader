@@ -612,5 +612,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Sledovať online",
+    "metaTitle": "Sledovať online – Prehrávač a sťahovač videí TeraBox a Cloud",
+    "metaDescription": "Sledujte a sťahujte videá z TeraBox, 1024Tera, NephoBox priamo v prehliadači. Rýchlo, zadarmo a bez registrácie.",
+    "hero": {
+      "tag": "Cloudový prehrávač a sťahovač",
+      "title": "Online Prehrávač Videa",
+      "description": "Prehrávajte a sťahujte videosúbory z TeraBoxu, 1024Tera a podporovaných cloudových služieb priamo vo svojom prehliadači."
+    },
+    "form": {
+      "placeholder": "Vložte podporovaný odkaz (napr. terabox.com/s/1...)",
+      "paste": "Vložiť",
+      "clear": "Vymazať",
+      "watch": "Prehrať video",
+      "analyzing": "Analyzujem odkaz na video…",
+      "supportedDomains": "Podporované cloudové služby"
+    },
+    "player": {
+      "videoPreview": "Video pripravené na prehrávanie",
+      "download": "Stiahnuť video",
+      "copyLink": "Kopírovať odkaz",
+      "copied": "Skopírované!",
+      "quality": "Kvalita",
+      "source": "Zdroj",
+      "duration": "Dĺžka",
+      "size": "Veľkosť súboru"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Čo je Sledovať online a ako funguje?",
+          "answer": "Je to nástroj na prehrávanie a sťahovanie verejných videí z TeraBoxu a iných cloudov priamo v prehliadači."
+        },
+        {
+          "question": "Ktoré domény sú podporované?",
+          "answer": "Podporujeme terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com a flezen.com."
+        },
+        {
+          "question": "Môžem sťahovať súbory chránené heslom?",
+          "answer": "Nie, súbory chránené heslom alebo vymazané súbory nemožno prehrať."
+        },
+        {
+          "question": "Musím sa registrovať?",
+          "answer": "Nie, registrácia nie je potrebná."
+        },
+        {
+          "question": "Prehráva sa video priamo v prehliadači?",
+          "answer": "Áno, pomocou prehrávača HTML5."
+        }
+      ]
+    }
   }
 }

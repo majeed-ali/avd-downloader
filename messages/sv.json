@@ -617,5 +617,57 @@
         ]
       }
     }
+  },
+  "watchOnline": {
+    "nav": "Titta online",
+    "metaTitle": "Titta online – TeraBox & Cloud Video Spelare och Nedladdare",
+    "metaDescription": "Titta och ladda ner videor från TeraBox, 1024Tera, NephoBox direkt i din webbläsare. Snabbt, gratis och utan registrering.",
+    "hero": {
+      "tag": "Moln Video Spelare & Nedladdare",
+      "title": "Online Videospelare",
+      "description": "Strömma och ladda ner videofiler från TeraBox och kompatibla molntjänster direkt i din webbläsare utan appinstallationer."
+    },
+    "form": {
+      "placeholder": "Klistra in molnlänk (t.ex. terabox.com/s/1...)",
+      "paste": "Klistra in",
+      "clear": "Rensa",
+      "watch": "Titta på video",
+      "analyzing": "Analyserar videolänk…",
+      "supportedDomains": "Molntjänster som stöds"
+    },
+    "player": {
+      "videoPreview": "Videon är redo att spelas upp",
+      "download": "Ladda ner video",
+      "copyLink": "Kopiera länk",
+      "copied": "Kopierad!",
+      "quality": "Kvalitet",
+      "source": "Källa",
+      "duration": "Längd",
+      "size": "Filstorlek"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "Vad är Titta online och hur fungerar det?",
+          "answer": "Det är ett webbverktyg för att spela upp och ladda ner offentliga videor från TeraBox och andra molnlagringsplatser direkt i webbläsaren."
+        },
+        {
+          "question": "Vilka molndomäner stöds?",
+          "answer": "Vi stöder terabox.com, 1024tera.com, nephobox.com, 4funbox.com, diskwala.com och flezen.com."
+        },
+        {
+          "question": "Kan jag ladda ner lösenordsskyddade filer?",
+          "answer": "Nej, lösenordsskyddade eller utgångna filer kan inte öppnas utan behörighet."
+        },
+        {
+          "question": "Måste jag skapa ett konto?",
+          "answer": "Nej, ingen registrering eller inloggning krävs."
+        },
+        {
+          "question": "Spelas videon upp direkt i webbläsaren?",
+          "answer": "Ja, med hjälp av webbläsarens inbyggda HTML5-videospelare."
+        }
+      ]
+    }
   }
 }

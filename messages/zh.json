@@ -417,7 +417,6 @@
         ]
       }
     },
-
     "ytwav": {
       "fullname": "YouTube 转 WAV",
       "hero": {
@@ -617,6 +616,58 @@
           }
         ]
       }
+    }
+  },
+  "watchOnline": {
+    "nav": "線上觀看",
+    "metaTitle": "線上觀看 – TeraBox 及雲端影片播放與下載器",
+    "metaDescription": "在瀏覽器中直接播放並下載 TeraBox、1024Tera、NephoBox 等雲端分享影片。高速、免費、無須註冊。",
+    "hero": {
+      "tag": "雲端影音播放與下載工具",
+      "title": "線上影音播放器",
+      "description": "直接在瀏覽器中串流播放並下載來自 TeraBox、1024Tera、NephoBox 等雲端空間的公開影片，無需安裝任何軟體或註冊帳號。"
+    },
+    "form": {
+      "placeholder": "貼上支援的雲端分享連結 (例如 terabox.com/s/1...)",
+      "paste": "貼上",
+      "clear": "清除",
+      "watch": "觀看影片",
+      "analyzing": "正在分析影片連結…",
+      "supportedDomains": "支援的雲端網域"
+    },
+    "player": {
+      "videoPreview": "影片已準備就緒",
+      "download": "下載影片",
+      "copyLink": "複製連結",
+      "copied": "已複製！",
+      "quality": "畫質",
+      "source": "來源",
+      "duration": "時長",
+      "size": "檔案大小"
+    },
+    "faqs": {
+      "list": [
+        {
+          "question": "什麼是「線上觀看」？它是如何運作的？",
+          "answer": "線上觀看是一項瀏覽器工具，能直接解析、播放並下載 TeraBox 及相容雲端空間的公開影片，無需下載客戶端或註冊帳戶。"
+        },
+        {
+          "question": "支援哪些雲端網域？",
+          "answer": "目前支援 terabox.com, 1024tera.com, teraboxapp.com, nephobox.com, 4funbox.com, mirrobox.com, momerybox.com, diskwala.com 和 flezen.com 等。"
+        },
+        {
+          "question": "可以下載設有密碼或已失效的檔案嗎？",
+          "answer": "無法。我們嚴格遵守版權與隱私存取限制，加密或失效的連結無法直接播放。"
+        },
+        {
+          "question": "需要註冊 AnyVideoDownloader 帳號嗎？",
+          "answer": "不需要，完全免費且無需註冊。"
+        },
+        {
+          "question": "影片可以直接在瀏覽器播放嗎？",
+          "answer": "可以，只要來源允許，將直接調用瀏覽器原生 HTML5 播放器。"
+        }
+      ]
     }
   }
 }
