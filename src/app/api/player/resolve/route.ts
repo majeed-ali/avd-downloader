@@ -59,10 +59,34 @@ export async function POST(request: NextRequest) {
 
     result.submissionId = submissionId;
 
-    return NextResponse.json(result, {
+    const responsePayload = {
+      ...result,
+      code: result.success ? 200 : 400,
+      status: result.success,
+      message: result.success ? "done" : (result.error || "failed"),
+      // FlowVideoPlayer compatible payload format
+      response: result.success
+        ? [
+            {
+              file_name: result.title,
+              thumbnail: result.thumbnail || "",
+              download_url: result.downloadUrl || "",
+              stream_url: result.streamUrl || "",
+              fast_stream_url: result.streamUrl || "",
+              file_size: result.fileSizeFormatted || "",
+              file_size_bytes: result.fileSize || 0,
+              share_url: requestedUrl,
+              extension: ".mp4",
+            },
+          ]
+        : [],
+    };
+
+    return NextResponse.json(responsePayload, {
       status: 200,
       headers: {
         "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Access-Control-Allow-Origin": "*",
       },
     });
   } catch (err: any) {

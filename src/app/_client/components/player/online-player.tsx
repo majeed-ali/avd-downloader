@@ -85,9 +85,29 @@ export function OnlineVideoPlayer({ locale, translations }: OnlinePlayerProps) {
         import("hls.js")
           .then(({ default: Hls }) => {
             if (Hls.isSupported()) {
-              hlsInstance = new Hls({ enableWorker: true });
+              hlsInstance = new Hls({
+                enableWorker: true,
+                lowLatencyMode: false,
+                backBufferLength: 90,
+              });
               hlsInstance.loadSource(currentStream);
               hlsInstance.attachMedia(video);
+
+              hlsInstance.on(Hls.Events.ERROR, (_event: any, data: any) => {
+                if (data.fatal) {
+                  switch (data.type) {
+                    case Hls.ErrorTypes.NETWORK_ERROR:
+                      hlsInstance.startLoad();
+                      break;
+                    case Hls.ErrorTypes.MEDIA_ERROR:
+                      hlsInstance.recoverMediaError();
+                      break;
+                    default:
+                      hlsInstance.destroy();
+                      break;
+                  }
+                }
+              });
             } else {
               video.src = currentStream;
             }

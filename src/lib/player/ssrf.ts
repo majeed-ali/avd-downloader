@@ -64,3 +64,29 @@ export function validatePublicUrl(rawUrl: string): { valid: boolean; url?: URL; 
     return { valid: false, error: "The provided string is not a valid URL" };
   }
 }
+
+const PERMITTED_MEDIA_DOMAINS = [
+  "freeterabox.com",
+  "terabox.com",
+  "terabox.app",
+  "teraboxapp.com",
+  "1024tera.com",
+  "1024terabox.com",
+  "nephobox.com",
+  "4funbox.com",
+  "mirrobox.com",
+  "momerybox.com",
+  "tibibox.com",
+  "baidupcs.com",
+  "dubox.com",
+  "diskwala.com",
+  "flezen.com",
+];
+
+export function isPermittedMediaHost(hostname: string): boolean {
+  const clean = hostname.toLowerCase().replace(/^www\./, "");
+  return PERMITTED_MEDIA_DOMAINS.some(
+    (domain) => clean === domain || clean.endsWith(`.${domain}`)
+  );
+}
+

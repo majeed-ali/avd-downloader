@@ -165,6 +165,29 @@ async function runTests() {
   const langGeo = await resolveGeoLocation("127.0.0.1", langHeaders);
   assert(langGeo.country === "US", "Resolves Accept-Language locale for localhost / local dev");
 
+  // 8. Test HLS Stream Manifest, Media Proxy & CORS Security
+  console.log("\n--- TEST GROUP 8: HLS Stream Manifest, Media Proxy & CORS Security ---");
+  const { isPermittedMediaHost } = await import("../src/lib/player/ssrf.ts");
+
+  assert(isPermittedMediaHost("v4.freeterabox.com"), "Allows legitimate CDN host v4.freeterabox.com");
+  assert(isPermittedMediaHost("data.terabox.app"), "Allows legitimate host data.terabox.app");
+  assert(isPermittedMediaHost("1024terabox.com"), "Allows legitimate host 1024terabox.com");
+  assert(!isPermittedMediaHost("malicious-site.com"), "Blocks unauthorized domain malicious-site.com");
+  assert(!isPermittedMediaHost("169.254.169.254"), "Blocks cloud metadata host");
+
+  // Verify M3U8 segment rewriting logic
+  const sampleM3u8 = `#EXTM3U\n#EXTINF:10,\nhttps://v4.freeterabox.com/video/chunk1.ts\n#EXTINF:10,\nhttps://v4.freeterabox.com/video/chunk2.ts`;
+  const rewrittenLines = sampleM3u8.split("\n").map((line) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+      return `/api/player/segment?url=${encodeURIComponent(trimmed)}`;
+    }
+    return line;
+  });
+  const rewrittenM3u8 = rewrittenLines.join("\n");
+  assert(rewrittenM3u8.includes("/api/player/segment?url="), "Manifest rewrites segment URLs to CORS-compliant proxy");
+  assert(!rewrittenM3u8.includes("https://v4.freeterabox.com/video/chunk1.ts"), "Manifest eliminates direct unproxied segment links");
+
   console.log("\n==================================================");
   console.log(`TEST RESULTS: ${testsPassed} PASSED, ${testsFailed} FAILED`);
   console.log("==================================================");

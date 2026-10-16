@@ -61,13 +61,26 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    return new NextResponse(m3u8Content, {
+    // Rewrite all segment URLs to our CORS-compliant segment proxy
+    const rewrittenM3u8 = m3u8Content
+      .split("\n")
+      .map((line) => {
+        const trimmed = line.trim();
+        if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+          return `/api/player/segment?url=${encodeURIComponent(trimmed)}`;
+        }
+        return line;
+      })
+      .join("\n");
+
+    return new NextResponse(rewrittenM3u8, {
       status: 200,
       headers: {
         "Content-Type": "application/vnd.apple.mpegurl; charset=utf-8",
         "Cache-Control": "public, max-age=1800, s-maxage=1800",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+        "Access-Control-Allow-Headers": "Range, Accept, Origin, Content-Type",
       },
     });
   } catch (err: any) {
@@ -76,4 +89,16 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+      "Access-Control-Allow-Headers": "Range, Accept, Origin, Content-Type",
+      "Access-Control-Max-Age": "86400",
+    },
+  });
 }
